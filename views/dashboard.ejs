@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <title>Main</title>
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <%- include('partials/navbar.ejs') %>
+    <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                <div class="card blue-grey darken-1 hoverable">
+                    <div class="card-content white-text">
+                    <p class="card-purpose">Goals</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col s12 m6">
+                <div class="card blue-grey darken-1 hoverable">
+                    <div class="card-content white-text">
+                    <p class="card-purpose">Tasks</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                <div class="card blue-grey darken-1 hoverable">
+                    <div class="card-content white-text">
+                    <p class="card-purpose">Journal</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col s12 m6">
+                <div class="card blue-grey darken-1 hoverable">
+                    <div class="card-content white-text">
+                    <p class="card-purpose">History</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </div>
+        <%- include('partials/footer.ejs') %>
+    </div>
+
+    <script src="js/materialize.js"></script>
+</body>
+</html>
