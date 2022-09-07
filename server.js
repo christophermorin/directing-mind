@@ -10,6 +10,9 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 const dashboardRoutes = require('./routes/dashboard')
+const goalsRoutes = require('./routes/goals')
+const tasksRoutes = require('./routes/tasks')
+const journalRoutes = require('./routes/journal')
 const historyRoutes = require('./routes/history')
 
 require('dotenv').config({path: './config/.env'})
@@ -43,6 +46,9 @@ app.use(flash())
 app.use('/', mainRoutes) // Login/Sign Up 
 app.use('/todos', todoRoutes)
 app.use('/dashboard', dashboardRoutes)
+app.use('/goals', goalsRoutes)
+app.use('/tasks', tasksRoutes)
+app.use('/journal', journalRoutes)
 app.use('/history', historyRoutes)
  
 app.listen(process.env.PORT, ()=>{
