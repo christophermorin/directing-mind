@@ -1,5 +1,57 @@
-/* .card-purpose{
-    font-size: 5rem;
-    text-align: center;
-    font-weight: bold;
-} */
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+.add-goal{
+}
+#add_goal{
+    width: 350px;
+    margin: auto;
+}
+
+.goals-wrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
+    min-height: 90vh;
+    
+}
+.goal-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-width: 350px;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.goal-task-list{
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+}
+.goal-header,.goal-task{
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+.goal-journal{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+

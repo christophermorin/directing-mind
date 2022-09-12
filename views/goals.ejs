@@ -1,9 +1,58 @@
 
-<body>
     <%- include('partials/navbar.ejs') %>
 
-    <h1>Goals</h1>
-    <%- include('partials/footer.ejs') %>
+    <!-- This will contain a boat load of EJS -->
+    <div class="goals-wrapper">
+    <section class="add-goal"><i class="medium material-icons">add_circle</i></section>
+        <div class="goal-container">
+            <section class="goal-header">
+                <h2 class="goal-title">Goal Title EJS</h2>
+                <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
+            </section>
+            <section class="goal-task-list">
+                <section class="goal-task">
+                    <h3>Task Title EJS</h3>
+                    <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                </section>
+                <section class="goal-task">
+                    <h3>Task Title EJS</h3>
+                    <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                </section>
+               
+            </section>
+            <section class="goal-journal">
+                <h5>Journal</h5>
+                <p class="goal-journal">Most recent note made in journal for this goal</p>
+            </section>
+        </div>
+        <dialog id="add_goal">
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Title" id="goal_title" type="text" class="validate" required>
+                      <label for="goal_title">Title</label>
+                    </div>
+                    
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea name="goal_description" id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea"></textarea>
+                      <label for="password">Description</label>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <input type="submit" class="btn waves-effect waves-light">
+                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                      
+                    
+                  </div>
+                </form>
+              </div>
+        </dialog>
+    </div>
 
-</body>
-</html>
+
+
+    <%- include('partials/footer.ejs') %>
