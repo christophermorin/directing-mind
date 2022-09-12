@@ -67,3 +67,12 @@ async function markIncomplete(){
         console.log(err)
     }
 }
+
+
+
+const addGoal = document.querySelector('.add-goal')
+const addGoalDialog = document.getElementById('add_goal')
+
+addGoal.addEventListener('click', () => {
+    addGoalDialog.showModal()
+})
