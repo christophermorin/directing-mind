@@ -76,3 +76,9 @@ const addGoalDialog = document.getElementById('add_goal')
 addGoal.addEventListener('click', () => {
     addGoalDialog.showModal()
 })
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
