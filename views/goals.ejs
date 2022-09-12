@@ -4,40 +4,58 @@
     <!-- This will contain a boat load of EJS -->
     <div class="goals-wrapper">
     <section class="add-goal"><i class="medium material-icons">add_circle</i></section>
-        <div class="goal-container">
-            <section class="goal-header">
-                <h2 class="goal-title">Goal Title EJS</h2>
-                <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
-            </section>
-            <section class="goal-task-list">
-                <section class="goal-task">
-                    <h3>Task Title EJS</h3>
-                    <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+    
+
+           
+        <ul class="collapsible">
+            <% goals.forEach( el => { %> 
+            <li>
+              <div class="collapsible-header goal-container">
+                <section class="goal-header">
+                    <h2 class="goal-title"><%= el.goalTitle %></h2>
+                    <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
                 </section>
-                <section class="goal-task">
-                    <h3>Task Title EJS</h3>
-                    <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+              </div>
+              <div class="collapsible-body">
+                <section class="goal-description">
+                    <p><%= el.goalDescription %></p>
                 </section>
-               
-            </section>
-            <section class="goal-journal">
-                <h5>Journal</h5>
-                <p class="goal-journal">Most recent note made in journal for this goal</p>
-            </section>
-        </div>
+                <section class="goal-task-list">
+                    <section class="goal-task">
+                        <h3>Task Title EJS</h3>
+                        <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                    </section>
+                    <section class="goal-task">
+                        <h3>Task Title EJS</h3>
+                        <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                    </section>
+                
+                </section>
+                <section class="goal-journal">
+                    <h5>Journal</h5>
+                    <p class="goal-journal">Most recent note made in journal for this goal</p>
+                </section>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+         
+
+
+
         <dialog id="add_goal">
             <div class="row">
-                <form class="col s12">
+                <form class="col s12" action="/goals/createGoal" method="POST">
                   <div class="row">
                     <div class="input-field col s6">
-                      <input placeholder="Title" id="goal_title" type="text" class="validate" required>
+                      <input placeholder="Title" id="goal_title" type="text" class="validate" name="goalTitle" required>
                       <label for="goal_title">Title</label>
                     </div>
                     
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <textarea name="goal_description" id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea"></textarea>
+                      <textarea id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="goalDescription"></textarea>
                       <label for="password">Description</label>
                     </div>
                   </div>
@@ -45,14 +63,48 @@
                   <div class="row">
                     <input type="submit" class="btn waves-effect waves-light">
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                      
-                    
                   </div>
                 </form>
               </div>
         </dialog>
     </div>
 
+       
+
 
 
     <%- include('partials/footer.ejs') %>
+
+
+
+
+
+
+
+
+
+
+     
+            
+                <!-- <div class="goal-container">
+                    <section class="goal-header">
+                        <h2 class="goal-title"></h2>
+                        <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
+                    </section>
+                    <section class="goal-task-list">
+                        <section class="goal-task">
+                            <h3>Task Title EJS</h3>
+                            <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                        </section>
+                        <section class="goal-task">
+                            <h3>Task Title EJS</h3>
+                            <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                        </section>
+                    
+                    </section>
+                    <section class="goal-journal">
+                        <h5>Journal</h5>
+                        <p class="goal-journal">Most recent note made in journal for this goal</p>
+                    </section>
+                </div>
+        -->

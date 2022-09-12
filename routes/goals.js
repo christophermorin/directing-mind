@@ -6,5 +6,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureAuth, goalsController.getGoals)
 
+router.post('/createGoal', goalsController.createGoal)
+
 
 module.exports = router

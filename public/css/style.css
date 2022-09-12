@@ -3,6 +3,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 0;
 }
 .add-goal{
+    cursor: pointer;
 }
 #add_goal{
     width: 350px;
@@ -17,6 +18,7 @@ h1,h2,h3,h4,h5,h6{
     min-height: 90vh;
     
 }
+
 .goal-container{
     display: flex;
     flex-flow: column;
@@ -31,7 +33,7 @@ h1,h2,h3,h4,h5,h6{
     flex-flow: column;
     gap: 5px;
 }
-.goal-header,.goal-task{
+.goal-header,.goal-task, .goal-description{
     display: flex;
     justify-content: space-between;
     width: 320px;
