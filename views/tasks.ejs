@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-    <title>Document</title>
-</head>
-<body>
+
     <%- include('partials/navbar.ejs') %>
 
     <h1>Tasks</h1>
+    <p><%= goal.goalTitle %></p>
+    <p><%= goal.goalDescription %></p>
+
+    <div class="row">
+        <form class="col s12" action="/goals/createGoal" method="POST">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Title" id="goal_title" type="text" class="validate" name="goalTitle" required>
+              <label for="goal_title">Title</label>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="goalDescription"></textarea>
+              <label for="password">Description</label>
+            </div>
+          </div>
+          
+          <div class="row">
+            <input type="submit" class="btn waves-effect waves-light">
+                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          </div>
+        </form>
+      </div>
+
+
+
+
     <%- include('partials/footer.ejs') %>
 
-</body>
-</html>
+
+

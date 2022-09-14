@@ -7,7 +7,7 @@
     
 
            
-        <ul class="collapsible">
+        <ul class="collapsible test">
             <% goals.forEach( el => { %> 
             <li>
               <div class="collapsible-header goal-container">
@@ -36,6 +36,7 @@
                     <p class="goal-journal">Most recent note made in journal for this goal</p>
                 </section>
               </div>
+              <a href="/tasks/<%= el._id%>">Click Me</a>
             </li>
             <% }) %>
           </ul>

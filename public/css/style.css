@@ -18,6 +18,12 @@ h1,h2,h3,h4,h5,h6{
     min-height: 90vh;
     
 }
+/* .test{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+} */
 
 .goal-container{
     display: flex;

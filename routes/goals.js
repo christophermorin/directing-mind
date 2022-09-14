@@ -8,5 +8,4 @@ router.get('/', ensureAuth, goalsController.getGoals)
 
 router.post('/createGoal', goalsController.createGoal)
 
-
 module.exports = router

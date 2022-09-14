@@ -5,6 +5,8 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 
 router.get('/', ensureAuth, tasksController.getTasks)
+router.get('/:id', tasksController.testOne)
+
 
 
 module.exports = router
