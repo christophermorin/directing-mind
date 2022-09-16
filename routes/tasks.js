@@ -3,10 +3,12 @@ const router = express.Router()
 const tasksController = require('../controllers/tasksController') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
+// I dont think I need this one anymore?
+// router.get('/', ensureAuth, tasksController.getTasks)
 
-router.get('/', ensureAuth, tasksController.getTasks)
-router.get('/:id', tasksController.testOne)
-
+// I think this should be on the goal router.
+router.get('/:id', tasksController.getTasks)
+router.post('/createTask/:id', tasksController.createTask)
 
 
 module.exports = router

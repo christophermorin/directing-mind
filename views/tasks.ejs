@@ -4,33 +4,42 @@
     <h1>Tasks</h1>
     <p><%= goal.goalTitle %></p>
     <p><%= goal.goalDescription %></p>
+    <% tasks.forEach (el => { %>
+        <p> <%= el.taskTitle %> </p>
+    <% }) %>
 
+
+
+
+    <section class="add-task"><i class="medium material-icons">add_circle</i></section>
+
+    <dialog id="add_task">  
     <div class="row">
-        <form class="col s12" action="/goals/createGoal" method="POST">
+        <form class="col s12" action="createTask/<%= goal.id %>" method="POST">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Title" id="goal_title" type="text" class="validate" name="goalTitle" required>
+              <input placeholder="Title" id="task_title" type="text" class="validate" name="taskTitle" required>
               <label for="goal_title">Title</label>
             </div>
-            
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="goalDescription"></textarea>
+              <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="taskDescription"></textarea>
               <label for="password">Description</label>
             </div>
           </div>
-          
           <div class="row">
             <input type="submit" class="btn waves-effect waves-light">
                 <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
         </form>
       </div>
+    </dialog>
 
+<script src="../js/tasks.js"></script>
 
-
-
+<!-- A sample test for git rebase -->
+<!-- A ssample test of rebase while working on a branch -->
     <%- include('partials/footer.ejs') %>
 
 
