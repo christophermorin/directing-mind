@@ -7,8 +7,7 @@ module.exports = {
         try{
             const goals = await Goals.find( {userId: req.user.id} )
             const tasks = await Tasks.find( {userId: req.user.id} )
-            console.log(tasks)
-            console.log(goals)
+           
             res.render('goals.ejs', {goals: goals, tasks: tasks})
         }catch(err){
             console.log(err)

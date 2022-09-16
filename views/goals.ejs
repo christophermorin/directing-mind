@@ -2,32 +2,49 @@
     <%- include('partials/navbar.ejs') %>
 
     <!-- This will contain a boat load of EJS -->
-    <div class="goals-wrapper">
+    <div class="project-wrapper">
     <section class="add-goal"><i class="medium material-icons">add_circle</i></section>
-    
-
-           
-        <ul class="collapsible test">
+  
+        <ul class="collapsible expandable project-spacing">
             <% goals.forEach( goal => { %> 
-            <li>
-              <div class="collapsible-header goal-container">
-                <section class="goal-header">
-                    <h2 class="goal-title"><%= goal.goalTitle %></h2>
-                    <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
-                </section>
+            <li class="project-boxes">
+              <div class=" project-container">
+                <div class="project-tab"></div>
+                  <div class="project-info">
+                    <section class="project-header">
+                      <h2 class="goal-title"><%= goal.goalTitle %></h2>
+                        <section class="goal-options">
+                          <a href="tasks/<%= goal._id%>">
+                            <span class="material-icons">start</span>
+                          </a>
+                        </section>
+                    </section>
+                    <section class="project-stats">
+                      <section class="project-count">
+                        <span><%= goal.taskCount.toString() %> / <%= goal.taskCount.toString() %> </span>
+                          <span class="material-icons">task</span>
+                            <span class="material-icons">auto_stories</span>
+                      </section>
+                        <section>
+                          <i class="material-icons collapsible-header test">keyboard_double_arrow_down</i>
+                        </section>
+                    </section>
+                </div>
               </div>
               <div class="collapsible-body">
-                <section class="goal-description">
+                <section class="project-description">
                     <p><%= goal.goalDescription %></p>
                 </section>
-                <section class="goal-task-list">
-                  <ul>
+                <section>
+                  <ul class="project-task-list">
                 <% tasks.forEach( task => { %>
                     <% if (task.goalId === goal.id) { %>
                       <li>
-                    <section class="goal-task">
+                    <section class="project-task">
                         <h3><%= task.taskTitle %></h3>
-                        <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
+                        <section class="goal-task-options">
+                            <span class="material-icons">start</span>
+                        </section>
                     </section>
                       </li>
                     <% } %>
@@ -39,9 +56,9 @@
                     <p class="goal-journal">Most recent note made in journal for this goal</p>
                 </section>
               </div>
-              <a href="tasks/<%= goal._id%>">Click Me</a>
             </li>
             <% }) %>
+         
           </ul>
          
 
