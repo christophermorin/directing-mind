@@ -9,6 +9,10 @@ const GoalsSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    taskCount: {
+        type: Number,
+        default: 0,
+    },
     userId: {
         type: String,
         required: true,
