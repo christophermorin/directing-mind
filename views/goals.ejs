@@ -8,35 +8,38 @@
 
            
         <ul class="collapsible test">
-            <% goals.forEach( el => { %> 
+            <% goals.forEach( goal => { %> 
             <li>
               <div class="collapsible-header goal-container">
                 <section class="goal-header">
-                    <h2 class="goal-title"><%= el.goalTitle %></h2>
+                    <h2 class="goal-title"><%= goal.goalTitle %></h2>
                     <section class="goal-options"><i class="small material-icons">more_horiz</i></section>
                 </section>
               </div>
               <div class="collapsible-body">
                 <section class="goal-description">
-                    <p><%= el.goalDescription %></p>
+                    <p><%= goal.goalDescription %></p>
                 </section>
                 <section class="goal-task-list">
+                  <ul>
+                <% tasks.forEach( task => { %>
+                    <% if (task.goalId === goal.id) { %>
+                      <li>
                     <section class="goal-task">
-                        <h3>Task Title EJS</h3>
+                        <h3><%= task.taskTitle %></h3>
                         <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
                     </section>
-                    <section class="goal-task">
-                        <h3>Task Title EJS</h3>
-                        <section class="goal-task-options"><i class="tiny material-icons">more_horiz</i></section>
-                    </section>
-                
+                      </li>
+                    <% } %>
+                <% }) %>
+                  </ul>
                 </section>
                 <section class="goal-journal">
                     <h5>Journal</h5>
                     <p class="goal-journal">Most recent note made in journal for this goal</p>
                 </section>
               </div>
-              <a href="/tasks/<%= el._id%>">Click Me</a>
+              <a href="tasks/<%= goal._id%>">Click Me</a>
             </li>
             <% }) %>
           </ul>
@@ -73,6 +76,7 @@
        
 
 
+  <script src="../js/goals.js"></script>
 
     <%- include('partials/footer.ejs') %>
 
