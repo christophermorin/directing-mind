@@ -1,40 +1,62 @@
 
     <%- include('partials/navbar.ejs') %>
 
-    <h1>Tasks</h1>
-    <p><%= goal.goalTitle %></p>
-    <p><%= goal.goalDescription %></p>
-    <% tasks.forEach (el => { %>
-        <p> <%= el.taskTitle %> </p>
-    <% }) %>
+    <div class="container">
+      <h1><%= goal.goalTitle %></h1>
+      <p><%= goal.goalDescription %></p>
+
+      <p>Tasks</p>
+      <ul class="collapsible expandable task-list">
+      <% tasks.forEach (el => { %>
+        <li>
+          <div class="task-box <%= el.isComplete === true ? 'complete' : '' %> ">
+            <p> <%= el.taskTitle %> </p>
+            <section class="task-options">
+                <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
+                  <button class="task-buttons dlt" type="submit"><i class="material-icons">clear</i></button>
+                </form>
+                <form action="completeTask/<%= el.id %>?_method=PUT" method="POST">
+                  <button class="task-buttons" type="submit"><i class="material-icons">done</i></button>
+                </form>
+                <i class="material-icons collapsible-header">keyboard_double_arrow_down</i>
+            </section>
+          </div>
+          <div class="task-body collapsible-body">
+            <section>
+                <p><%= el.taskDescription %></p>
+            </section>
+          </div>
+        </li>
+      <% }) %>
+      </ul>
 
 
 
+      <section class="add-task"><i class="medium material-icons">add_circle</i></section>
 
-    <section class="add-task"><i class="medium material-icons">add_circle</i></section>
-
-    <dialog id="add_task">  
-    <div class="row">
-        <form class="col s12" action="createTask/<%= goal.id %>" method="POST">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Title" id="task_title" type="text" class="validate" name="taskTitle" required>
-              <label for="goal_title">Title</label>
+      <dialog id="add_task">  
+      <div class="row">
+          <form class="col s12" action="createTask/<%= goal.id %>" method="POST">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Title" id="task_title" type="text" class="validate" name="taskTitle" required>
+                <label for="goal_title">Title</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="taskDescription"></textarea>
-              <label for="password">Description</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="taskDescription"></textarea>
+                <label for="password">Description</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <input type="submit" class="btn waves-effect waves-light">
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-          </div>
-        </form>
-      </div>
-    </dialog>
+            <div class="row">
+              <input type="submit" class="btn waves-effect waves-light">
+                  <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+            </div>
+          </form>
+        </div>
+      </dialog>
+    </div>
 
 <script src="../js/tasks.js"></script>
 

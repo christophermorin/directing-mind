@@ -9,6 +9,8 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 // I think this should be on the goal router.
 router.get('/:id', tasksController.getTasks)
 router.post('/createTask/:id', tasksController.createTask)
+router.delete('/deleteTask/:id', tasksController.deleteTask)
+router.put('/completeTask/:id', tasksController.completeTask)
 
 
 module.exports = router
