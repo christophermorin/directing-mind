@@ -2,6 +2,10 @@ h1,h2,h3,h4,h5,h6{
     margin: 0;
     padding: 0;
 }
+
+/* ************************************ */
+/* PROJECT STYLES */
+/* ************************************ */
 .add-goal{
     cursor: pointer;
 }
@@ -10,13 +14,13 @@ h1,h2,h3,h4,h5,h6{
     margin: auto;
 }
 
-.project-wrapper{
+/* .project-wrapper{
     display: flex;
     flex-flow: column;
     align-items: center;
-    /* gap: 10px; */
+    gap: 10px;
     min-height: 90vh;
-}
+} */
 
 .project-spacing{
     display: flex;
@@ -28,7 +32,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-flow: column;
     height: 120px;
-    width: 350px;
+    width: 100%;
 }
 .project-tab{
     height: 70px;
@@ -61,7 +65,7 @@ h1,h2,h3,h4,h5,h6{
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.project-task-list{
+.project-task-list,.task-list{
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -88,35 +92,41 @@ h1,h2,h3,h4,h5,h6{
     align-items: center;
 }
 
-
-
-
-
-
-
-
-
-
-/* .project-container{
+/* ***************************************** */
+/* TASKS STYLES */
+/* ***************************************** */
+.task-box{
     display: flex;
-    flex-flow: column;
-    width: 350px;
-    height: 225px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-.top-graphic{
-    height: 75px;
-    background-color: lightblue;
+.task-options{
+    display: flex;
+    align-self: flex-end;
+    gap: 10px;
 }
-.title-desc{
-    padding: 0 20px;
-    height: 125px;
+.task-buttons{
+    border: none;
+    background: none;
+    cursor: pointer;
+
 }
-.pro-title{
-    font-weight: 700;
+.dlt{
+    color: red;
 }
-.pro-desc{
+.complete {
+    /* background: green; */
 }
-.pro-nav{
-    text-align: center;
-} */
+
+
+
+
+
+
+
+
+
+
+

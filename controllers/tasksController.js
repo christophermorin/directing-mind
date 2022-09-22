@@ -31,5 +31,30 @@ module.exports = {
       } catch (err){
         console.log(err)
       }
+    },
+    deleteTask: async (req, res) => {
+      try {
+        const post = await Tasks.findById( {_id: req.params.id} )
+        await Goals.updateOne({_id: post.goalId}, {$inc : {taskCount: -1}})
+        await Tasks.deleteOne( {_id: req.params.id})
+        console.log('Task deleted')
+        res.redirect(`../${post.goalId}`)
+      }catch(err){
+        console.log(err)
+      }
+    },
+    completeTask: async (req, res) => {
+      try {
+        const post = await Tasks.findById( {_id: req.params.id} )
+        await Tasks.findOneAndUpdate( {_id: req.params.id},
+          {
+          isComplete: !post.isComplete
+          }
+        )
+        console.log('Task Complete')
+        res.redirect(`../${post.goalId}`)
+      }catch(err){
+        console.log(err)
+      }
     }
 }

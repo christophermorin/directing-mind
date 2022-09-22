@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
+const methodOverride = require('method-override')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 const dashboardRoutes = require('./routes/dashboard')
@@ -27,6 +28,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
+app.use(methodOverride("_method"))
 // Sessions
 app.use(
     session({
