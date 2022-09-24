@@ -8,17 +8,18 @@
       <button class="btn btn-active btn-primary add-goal">Add Project</button>
         <ul class=" project-spacing">
             <% goals.forEach( goal => { %> 
-            <li class="project-boxes collapse" tabindex="0">
-              <div class=" project-container">
+            <li class="project-boxes collapse" >
+              <input type="checkbox" class="peer" /> 
+              <div class=" project-container collapse-title">
                 <div class="project-tab"></div>
                   <div class="project-info">
                     <section class="project-header">
                       <h2 class="goal-title"><%= goal.goalTitle %></h2>
-                        <section class="goal-options">
+                        <!-- <section class="goal-options">
                           <a href="tasks/<%= goal._id%>">
                             <span class="material-icons">start</span>
                           </a>
-                        </section>
+                        </section> -->
                     </section>
                     <section class="project-stats">
                       <section class="project-count">
@@ -54,9 +55,16 @@
                 <% }) %>
                   </ul>
                 </section>
+                <a href="tasks/<%= goal._id%>">
+                <button class="btn btn-active btn-primary add-goal">Begin</button>
+                </a>
+
+
                 <section class="goal-journal">
                     <h5>Journal</h5>
-                    <p class="goal-journal">Most recent note made in journal for this goal</p>
+                    <a href="journal/<%= goal._id%>">
+                    <button class="btn btn-active btn-primary add-goal">Add Journal</button>
+                    </a>
                 </section>
               </div>
             </li>
