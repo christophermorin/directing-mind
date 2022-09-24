@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 h1,h2,h3,h4,h5,h6{
     margin: 0;
     padding: 0;
@@ -65,11 +70,17 @@ h1,h2,h3,h4,h5,h6{
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.project-task-list,.task-list{
+.project-task-list{
     display: flex;
     flex-flow: column;
     gap: 10px;
 }
+.task-list{
+    min-width: 340px;
+    display: flex;
+    flex-flow: column;
+    gap:10px;
+  }
 .project-task-list li{
     padding: 0 10px;
 }
@@ -119,6 +130,50 @@ h1,h2,h3,h4,h5,h6{
 .complete {
     /* background: green; */
 }
+
+
+
+
+.login-signup-box{
+   text-align: center;
+   padding: 4rem;
+}
+h1{
+    margin-bottom: 5rem;
+    color: rgba(0,0,0,0.5);
+}
+form{
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+}
+.alert{
+    color: red;
+    padding-bottom: 0.5rem;
+
+}
+.index-buttons{
+    display: flex;
+    justify-content: center;
+    padding:3.5rem;
+    gap: 1rem;
+}
+.login-span{
+    width: 110px;
+}
+
+.wrapper{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .form-margin{
+    margin: 0;
+  }
+
 
 
 

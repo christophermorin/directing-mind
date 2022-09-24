@@ -1,27 +1,40 @@
 
+    <div class="min-h-screen bg-accent-content flex flex-col justify-between">
     <%- include('partials/navbar.ejs') %>
 
-    <div class="container">
+    
+
+
+
+    <div class="wrapper">
       <h1><%= goal.goalTitle %></h1>
       <p><%= goal.goalDescription %></p>
 
+      <span class="countdown font-mono text-2xl">
+        <span style="--value:24;" class="minutes"></span>:
+        <span style="--value:5;" class="seconds"></span>
+      </span>
+
       <p>Tasks</p>
-      <ul class="collapsible expandable task-list">
+      <button class="btn btn-active btn-primary add-task">Add Task</button>
+
+
+      <ul class="task-list">
       <% tasks.forEach (el => { %>
-        <li>
+        <li class="collapse project-boxes" tabindex="0">
           <div class="task-box <%= el.isComplete === true ? 'complete' : '' %> ">
             <p> <%= el.taskTitle %> </p>
             <section class="task-options">
-                <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
+                <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST" class="form-margin">
                   <button class="task-buttons dlt" type="submit"><i class="material-icons">clear</i></button>
                 </form>
-                <form action="completeTask/<%= el.id %>?_method=PUT" method="POST">
+                <form action="completeTask/<%= el.id %>?_method=PUT" method="POST" class="form-margin">
                   <button class="task-buttons" type="submit"><i class="material-icons">done</i></button>
                 </form>
-                <i class="material-icons collapsible-header">keyboard_double_arrow_down</i>
+                <i class="material-icons">keyboard_double_arrow_down</i>
             </section>
           </div>
-          <div class="task-body collapsible-body">
+          <div class="task-body collapse-content">
             <section>
                 <p><%= el.taskDescription %></p>
             </section>
@@ -32,7 +45,6 @@
 
 
 
-      <section class="add-task"><i class="medium material-icons">add_circle</i></section>
 
       <dialog id="add_task">  
       <div class="row">
@@ -57,12 +69,13 @@
         </div>
       </dialog>
     </div>
+    <%- include('partials/footer.ejs') %>
 
+  </div>
 <script src="../js/tasks.js"></script>
 
 <!-- A sample test for git rebase -->
 <!-- A ssample test of rebase while working on a branch -->
-    <%- include('partials/footer.ejs') %>
 
 
 

@@ -4,22 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/main.css">
+    
 
     <title>Login</title>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <!-- <h1>Working Title</h1> -->
-            <section class="index-buttons">
-                <a href="/login" class="login-a" alt="Login"><span class="waves-effect waves-light btn-large login-span">Login</span></a>
-                <a href="/signup" class="login-a" alt="Sign Up"><span class="waves-effect waves-light btn-large login-span">Signup</span></a>
-                <!-- line 5266 mat for buttons -->
-            </section>
+    <div class="hero-content min-h-screen bg-accent-content flex flex-col">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Hello There</h1>
+            <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <div class="card-actions justify-end">
+              
+              </div>
+          </div>
         </div>
+        
+      <div class="-content">
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <% if (locals.messages.info) { %>
+                <% messages.info.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <form action="/login" method="POST">
+                <input type="email" name="email" placeholder="Email" class="bg-primary input input-bordered w-full max-w-xs">
+                <input type="password" name="password" placeholder="Password" class="bg-primary input input-bordered w-full max-w-xs">
+                <input type="submit" value="Login" class="bg-secondary input input-bordered w-full max-w-xs">
+            </form>
+      </div>
+      <a href="/signup" alt="Sign Up"><button class="btn btn-primary">Sign Up</button></a>
+
     </div>
+
+      <!-- <div class="hero min-h-screen bg-base-200">
+        <div class="login-container">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Login now!</h1>
+            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+          </div>
+          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input type="text" placeholder="email" class="input input-bordered" />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Password</span>
+                </label>
+                <input type="text" placeholder="password" class="input input-bordered" />
+                <label class="label">
+                  <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                </label>
+              </div>
+              <div class="form-control mt-6">
+                <button class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     -->
 </body>
 </html>
