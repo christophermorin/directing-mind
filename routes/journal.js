@@ -4,7 +4,7 @@ const journalController = require('../controllers/journalController')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 
-router.get('/', ensureAuth, journalController.getJournal)
-
+router.get('/:id', ensureAuth, journalController.getJournal)
+router.post('/createJournal/:id', journalController.createJournal)
 
 module.exports = router

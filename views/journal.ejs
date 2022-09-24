@@ -1,19 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-    <title>Document</title>
-</head>
-<body>
-    <%- include('partials/navbar.ejs') %>
 
+<div class=" min-h-screen bg-accent-content flex flex-col justify-between">
+    
+    <%- include('partials/navbar.ejs') %>
+    <div class=" bg-base-100 shadow-xl">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            <%= goal.goalTitle %>
+          </h2>
+          <!-- <p><%= journals.length %></p> -->
+          <% if (journals.length === 0) { %>
+            <span>No Journals</span>
+          <%} else { %>
+          
+          
+          <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
+          <p> <%= pic.journalTitle %> </p>
+          <p class="overflow-hidden h-32"> <%= pic.journalText %> </p>
+          <% } %>
+
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Fashion</div> 
+            <div class="badge badge-outline">Products</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <ul class="grid grid-cols-1  gap-2.5 justify-center pt-10">     
+            <% journals.forEach(el => { %>   
+         <li class="flex justify-center">
+        <button class="btn journal-list justify-between h-20">
+          <p><%= el.journalDate %></p>
+
+            <span class="material-icons">auto_stories</span>
+            <div class="flex items-center w-9/12 overflow-hidden h-10">
+                <p><%= el.journalTitle %></p>
+
+            </div>
+          </button>
+         </li>
+         <% }) %>
+        </ul>
+      </div>
+
+    <form action="createJournal/<%= goal.id %>" method="POST">
+        <input type="text" name="journalTitle">
+        <textarea name="journalText" id="journalText" cols="30" rows="10">
+
+        </textarea>
+        <input type="submit">
+    </form>
     <h1>Journal</h1>
     <%- include('partials/footer.ejs') %>
 
-</body>
-</html>
+</div>

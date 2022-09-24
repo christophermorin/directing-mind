@@ -3434,18 +3434,6 @@ body[dir="rtl"] .checkbox:checked,
   display: grid;
 }
 
-.h-32 {
-  height: 8rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -3456,10 +3444,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .w-full {
   width: 100%;
-}
-
-.w-9\/12 {
-  width: 75%;
 }
 
 .w-5 {
@@ -3490,16 +3474,12 @@ body[dir="rtl"] .checkbox:checked,
   flex-shrink: 0;
 }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
 }
 
 .justify-end {
@@ -3558,6 +3538,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .stroke-current {
   stroke: currentColor;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .py-6 {
@@ -3820,10 +3804,6 @@ form{
   transition: background-color 0.2s ease-in-out;
 }
 
-.journal-list{
-  width: 300px;
-}
-
 .peer:checked ~ .peer-checked\:bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--s) / var(--tw-bg-opacity));
@@ -3839,7 +3819,10 @@ form{
     text-align: left;
   }
 }
+
+
   
+
 
 
 
