@@ -31,7 +31,7 @@ const User = require('../models/User')
       req.logIn(user, (err) => {
         if (err) { return next(err) }
         req.flash('success', { msg: 'Success! You are logged in.' })
-        res.redirect(req.session.returnTo || '/dashboard')
+        res.redirect(req.session.returnTo || '/goals')
       })
     })(req, res, next)
   }
@@ -47,7 +47,7 @@ const User = require('../models/User')
   
   exports.getSignup = (req, res) => {
     if (req.user) {
-      return res.redirect('/dashboard') // If user is already signed in, this redirects to dashboard when they click SignUp again.
+      return res.redirect('/goals') // If user is already signed in, this redirects to dashboard when they click SignUp again.
     }
     res.render('signup', {
       title: 'Create Account'
@@ -87,7 +87,7 @@ const User = require('../models/User')
           if (err) {
             return next(err)
           }
-          res.redirect('/dashboard') // Redirects to dashboard after sign up.
+          res.redirect('/goals') // Redirects to dashboard after sign up.
         })
       })
     })

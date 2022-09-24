@@ -6,9 +6,40 @@ addTask.addEventListener('click', () => {
 })
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible.expandable');
-    var instances = M.Collapsible.init(elems, {accordion: false});
-  });
 
-  let taskCount = 0
+
+
+
+//   const test = getComputedStyle(document.getElementsByClassName('sec'))
+//   .getPropertyValue('--value'); // #999999
+//   console.log(test)
+let minutesStyles = getComputedStyle(document.querySelector('.minutes'))
+let secondsStyles = getComputedStyle(document.querySelector('.seconds'))
+
+let minutesVal = minutesStyles.getPropertyValue(`--value`);
+let secondsVal = secondsStyles.getPropertyValue(`--value`);
+
+
+const timer = setInterval(function () {
+    document.querySelector('.seconds').style.setProperty(`--value`, secondsVal--)
+
+    if(secondsVal <= -1){
+        document.querySelector('.seconds').style.setProperty(`--value`, 59)
+        document.querySelector('.minutes').style.setProperty(`--value`, minutesVal-1)
+
+        secondsVal = 59
+
+    }
+ 
+},1000)
+        
+       
+  
+
+
+        
+        
+   
+
+
+ 

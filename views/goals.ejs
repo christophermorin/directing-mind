@@ -1,13 +1,14 @@
 
-    <%- include('partials/navbar.ejs') %>
+<div class=" min-h-screen bg-accent-content flex flex-col justify-between">
+  <%- include('partials/navbar.ejs') %>
 
     <!-- This will contain a boat load of EJS -->
-    <div class="container">
-    <section class="add-goal"><i class="medium material-icons">add_circle</i></section>
-  
-        <ul class="collapsible expandable project-spacing">
+    <div class="bg-accent-content wrapper">
+
+      <button class="btn btn-active btn-primary add-goal">Add Project</button>
+        <ul class=" project-spacing">
             <% goals.forEach( goal => { %> 
-            <li class="project-boxes">
+            <li class="project-boxes collapse" tabindex="0">
               <div class=" project-container">
                 <div class="project-tab"></div>
                   <div class="project-info">
@@ -26,12 +27,14 @@
                             <span class="material-icons">auto_stories</span>
                       </section>
                         <section>
-                          <i class="material-icons collapsible-header test">keyboard_double_arrow_down</i>
+                          <span class="material-icons peer-checked:bg-secondary peer-checked:text-secondary-content">
+                            expand_more
+                            </span>
                         </section>
                     </section>
                 </div>
               </div>
-              <div class="collapsible-body">
+              <div class="collapse-content peer-checked:bg-secondary peer-checked:text-secondary-content">
                 <section class="project-description">
                     <p><%= goal.goalDescription %></p>
                 </section>
@@ -88,10 +91,12 @@
               </div>
         </dialog>
     </div>
+    <%- include('partials/footer.ejs') %>
 
+    </div>
+    
        
 
 
   <script src="../js/goals.js"></script>
 
-    <%- include('partials/footer.ejs') %>
