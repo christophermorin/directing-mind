@@ -13,6 +13,10 @@ const GoalsSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    isComplete: {
+        type: Boolean,
+        default: false
+    },
     userId: {
         type: String,
         required: true,

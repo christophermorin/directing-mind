@@ -10,7 +10,7 @@
           </h2>
           <!-- <p><%= journals.length %></p> -->
           <% if (journals.length === 0) { %>
-            <span>No Journals</span>
+            <p>There are no journals for your <%=goal.goalTitle %> project.</p>
           <%} else { %>
           
           
@@ -32,8 +32,9 @@
          <li class="flex justify-center">
         <button class="btn journal-list justify-between h-20">
           <p><%= el.journalDate %></p>
-
-            <span class="material-icons">auto_stories</span>
+          <section>
+            <i class="material-icons">clear</i>
+          </section>
             <div class="flex items-center w-9/12 overflow-hidden h-10">
                 <p><%= el.journalTitle %></p>
 
