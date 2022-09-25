@@ -31,9 +31,18 @@ module.exports = {
       }catch(err){
         console.log(err)
       }
+    },
+    deleteJournal: async (req, res) => {
+      try {
+          const journalEntry = await Journals.findById( {_id: req.params.id} )
+          await Journals.findByIdAndDelete( {_id: req.params.id} ) 
+          console.log('Journal Entry Deleted')
+          res.redirect(`../${journalEntry.goalId}`)
+    }catch(err){
+      console.log(err)
     }
+    },
 }
-
 
 
 

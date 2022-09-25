@@ -20,8 +20,7 @@
           <% } %>
 
           <div class="card-actions justify-end">
-            <div class="badge badge-outline">Fashion</div> 
-            <div class="badge badge-outline">Products</div>
+            <div class="badge badge-outline">Read</div> 
           </div>
         </div>
       </div>
@@ -31,14 +30,16 @@
             <% journals.forEach(el => { %>   
          <li class="flex justify-center">
         <button class="btn journal-list justify-between h-20">
-          <p><%= el.journalDate %></p>
-          <section>
-            <i class="material-icons">clear</i>
-          </section>
-            <div class="flex items-center w-9/12 overflow-hidden h-10">
-                <p><%= el.journalTitle %></p>
+          <section class="flex flex-col gap-5">
+            <p><%= el.journalTitle %></p>
 
-            </div>
+            <p><%= el.journalDate %></p>
+          </section>
+          <section>
+            <form action="deleteJournal/<%= el.id %>?_method=DELETE" method="POST" class="form-margin">
+              <button class="task-buttons dlt bg-secondary" type="submit"><i class="material-icons">clear</i></button>
+            </form>
+          </section>
           </button>
          </li>
          <% }) %>

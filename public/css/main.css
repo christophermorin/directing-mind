@@ -3179,10 +3179,6 @@ body[dir="rtl"] .checkbox:checked,
   margin-top: 1.5rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -3203,10 +3199,6 @@ body[dir="rtl"] .checkbox:checked,
   height: 5rem;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -3217,10 +3209,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .w-full {
   width: 100%;
-}
-
-.w-9\/12 {
-  width: 75%;
 }
 
 .w-5 {
@@ -3259,10 +3247,6 @@ body[dir="rtl"] .checkbox:checked,
   flex-direction: column;
 }
 
-.items-center {
-  align-items: center;
-}
-
 .justify-end {
   justify-content: flex-end;
 }
@@ -3285,6 +3269,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .gap-2\.5 {
   gap: 0.625rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .overflow-hidden {
