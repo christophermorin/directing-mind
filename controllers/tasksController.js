@@ -34,11 +34,11 @@ module.exports = {
     },
     deleteTask: async (req, res) => {
       try {
-        const post = await Tasks.findById( {_id: req.params.id} )
-        await Goals.updateOne({_id: post.goalId}, {$inc : {taskCount: -1}})
+        const task = await Tasks.findById( {_id: req.params.id} )
+        await Goals.updateOne({_id: task.goalId}, {$inc : {taskCount: -1}})
         await Tasks.deleteOne( {_id: req.params.id})
         console.log('Task deleted')
-        res.redirect(`../${post.goalId}`)
+        res.redirect(`../${task.goalId}`)
       }catch(err){
         console.log(err)
       }

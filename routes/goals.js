@@ -8,6 +8,10 @@ router.get('/', ensureAuth, goalsController.getGoals)
 
 router.post('/createGoal', goalsController.createGoal)
 
+router.delete('/deleteProject/:id', goalsController.deleteProject)
+
+router.put('/completeProject/:id', goalsController.completeProject)
+
 
 
 
