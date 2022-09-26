@@ -193,6 +193,16 @@ form{
   }
   
 
+  .navbar{
+    height: 10vh;
+  }
+  .footer{
+    min-height: 5vh;
+  }
+  .page-load{
+    min-height: 85vh;
+  }
+
 
 
 

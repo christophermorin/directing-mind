@@ -3585,6 +3585,18 @@ form{
   width: 300px;
 }
 
+.navbar{
+  height: 10vh;
+}
+
+.footer{
+  min-height: 5vh;
+}
+
+.page-load{
+  min-height: 85vh;
+}
+
 .peer:checked ~ .peer-checked\:bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--s) / var(--tw-bg-opacity));
@@ -3600,7 +3612,6 @@ form{
     text-align: left;
   }
 }
-  
 
 
 
