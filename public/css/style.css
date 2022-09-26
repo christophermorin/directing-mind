@@ -171,7 +171,6 @@ form{
     flex-flow: column;
     gap: 20px;
     align-items: center;
-    padding: 0 10px;
   }
 
   .form-margin{
@@ -202,7 +201,11 @@ form{
   .page-load{
     min-height: 85vh;
   }
-
+  .drawer{
+    position: absolute;
+    height: 85vh;
+    width: unset;
+  }
 
 
 
