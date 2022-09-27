@@ -1,16 +1,12 @@
-
-  <%- include('partials/navbar.ejs') %>
-
+<%- include('partials/navbar.ejs') %>
 <div class="bg-all flex flex-col justify-between page-load">
-    <!-- This will contain a boat load of EJS -->
-    <div class="wrapper pt-2.5">
-
-      <button class="btn btn-active btn-primary add-goal">Add Project</button>
-        <ul class=" project-spacing">
-            <% goals.forEach( goal => { %> 
-              <% if (goal.isComplete === false) { %>
-            <li class="project-boxes collapse" >
-              <input type="checkbox" class="peer" /> 
+  <div class="wrapper pt-2.5">
+    <button class="btn btn-active btn-primary add-goal">Add Project</button>
+      <ul class=" project-spacing">
+          <% goals.forEach( goal => { %> 
+            <% if (goal.isComplete === false) { %>
+          <li class="project-boxes collapse" >
+            <input type="checkbox" class="peer" /> 
               <div class=" project-container collapse-title">
                 <div class="project-tab"></div>
                   <div class="project-info">
@@ -42,8 +38,8 @@
                 </section>
                 <section>
                   <ul class="project-task-list">
-                <% tasks.forEach( task => { %>
-                    <% if (task.goalId === goal.id) { %>
+                    <% tasks.forEach( task => { %>
+                      <% if (task.goalId === goal.id) { %>
                       <li>
                         <section class="project-task">
                           <h3><%= task.taskTitle %></h3>
@@ -52,8 +48,8 @@
                             </section>
                         </section>
                       </li>
-                    <% } %>
-                <% }) %>
+                      <% } %>
+                    <% }) %>
                   </ul>
                 </section>
                 <div class="flex flex-col gap-2 mt-2">
@@ -62,11 +58,9 @@
                       <button class="btn btn-active btn-primary add-goal w-32">Begin</button>
                     </a>
                   </section>
-
-
                   <section class="goal-journal">
                       <a href="journal/<%= goal._id%>">
-                      <button class="btn btn-active btn-primary add-goal w-32">Journal</button>
+                        <button class="btn btn-active btn-primary add-goal w-32">Journal</button>
                       </a>
                   </section>
                   <div class="flex justify-end gap-4 pt-4">
@@ -99,19 +93,11 @@
                   </div>
                 </div>
               </div>
-              
-              
-
             </li>
-            <% } %>
+              <% } %>
             <% }) %>
           </ul>
          
-       
-
-     
-
-
         <dialog id="add_goal">
             <div class="row flex flex-col">
                 <form class="col s12 items-center" action="/goals/createGoal" method="POST">
@@ -119,29 +105,21 @@
                     <div class="input-field col s6">
                       <input placeholder="Title" id="goal_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="goalTitle" required>
                     </div>
-                    
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
                       <textarea id="goal_description" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="goalDescription"></textarea>
                     </div>
                   </div>
-                  
                   <div class="row">
                     <input type="submit" class="btn waves-effect waves-light">
                   </div>
                 </form>
               </div>
         </dialog>
-
-
-
-
-
-        <script src="../js/goals.js"></script>
-
     </div>
 </div>
+<script src="../js/goals.js"></script>
   <%- include('partials/footer.ejs') %>
 
     

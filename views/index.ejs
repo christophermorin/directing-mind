@@ -14,66 +14,28 @@
     <div class="hero-content min-h-screen flex flex-col">
         <div class="hero-content text-center">
           <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Directing Mind</h1>
-            <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <div class="card-actions justify-end">
-              
-              </div>
+              <h1 class="mb-5 text-5xl font-bold">Directing Mind</h1>
+                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
           </div>
         </div>
-        
-      <div class="-content">
-            <% if (locals.messages.errors) { %>
-                <% messages.errors.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <% if (locals.messages.info) { %>
-                <% messages.info.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="Email" class="bg-all input input-bordered w-full max-w-xs">
-                <input type="password" name="password" placeholder="Password" class="bg-all input input-bordered w-full max-w-xs">
-                <input type="submit" value="Login" class="bg-nav input input-bordered w-full max-w-xs">
-            </form>
-
-      </div>
-      <a href="/signup" alt="Sign Up"><button class="btn btn-secondary bg-primary input input-bordered w-full max-w-xs">Sign Up</button></a>
-
+    <div class="-content">
+          <% if (locals.messages.errors) { %>
+              <% messages.errors.forEach( el => { %>
+                  <div class="alert alert-danger"><%= el.msg %></div>
+              <% }) %>    
+          <% } %>
+          <% if (locals.messages.info) { %>
+              <% messages.info.forEach( el => { %>
+                  <div class="alert alert-danger"><%= el.msg %></div>
+              <% }) %>    
+          <% } %>
+          <form action="/login" method="POST">
+              <input type="email" name="email" placeholder="Email" class="bg-all input input-bordered w-full max-w-xs">
+              <input type="password" name="password" placeholder="Password" class="bg-all input input-bordered w-full max-w-xs">
+              <input type="submit" value="Login" class="bg-nav input input-bordered w-full max-w-xs">
+          </form>
     </div>
-
-      <!-- <div class="hero min-h-screen bg-base-200">
-        <div class="login-container">
-          <div class="text-center lg:text-left">
-            <h1 class="text-5xl font-bold">Login now!</h1>
-            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          </div>
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Email</span>
-                </label>
-                <input type="text" placeholder="email" class="input input-bordered" />
-              </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Password</span>
-                </label>
-                <input type="text" placeholder="password" class="input input-bordered" />
-                <label class="label">
-                  <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                </label>
-              </div>
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-     -->
+      <a href="/signup" alt="Sign Up"><button class="btn btn-secondary bg-primary input input-bordered w-full max-w-xs">Sign Up</button></a>
+    </div>
 </body>
 </html>
