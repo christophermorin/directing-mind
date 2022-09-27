@@ -21,7 +21,7 @@ Most importantly record your progress your achievements and the lessons you've l
 
 ## Lessons Learned:
 
-Exploring the use of a few different CSS frameworks was a huge lesson, both the pros and cons of the librarys they provide. 
-Even more experience using larger databases within an MVC structure and how to handle, collect and display that data. 
-Learnt about the risks of Cross Site Scripting.
+Exploring the use of a few different CSS frameworks was a huge lesson, both the pros and cons of the libraries they provide. 
+Even more experience using larger databases within an MVC structure and how to handle, collect, and display that data. 
+Discovering what Cross Site Scripting is and how to prevent it.
 
