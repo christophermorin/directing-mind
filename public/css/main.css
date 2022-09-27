@@ -3864,6 +3864,14 @@ body[dir="rtl"] .checkbox:checked,
   padding-top: 1rem;
 }
 
+.pb-2\.5 {
+  padding-bottom: 0.625rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
