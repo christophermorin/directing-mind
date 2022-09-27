@@ -49,17 +49,15 @@
 
       <dialog id="add_task">  
       <div class="row">
-          <form class="col s12" action="createTask/<%= goal.id %>" method="POST">
+          <form class="col s12 items-center" action="createTask/<%= goal.id %>" method="POST">
             <div class="row">
               <div class="input-field col s6">
-                <input placeholder="Title" id="task_title" type="text" class="validate" name="taskTitle" required>
-                <label for="goal_title">Title</label>
+                <input placeholder="Title" id="task_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="taskTitle" required>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="taskDescription"></textarea>
-                <label for="password">Description</label>
+                <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="textarea textarea-bordered bg-all" name="taskDescription"></textarea>
               </div>
             </div>
             <div class="row">
