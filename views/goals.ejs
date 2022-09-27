@@ -86,7 +86,7 @@
                     <!-- Complete Project Dialog -->
                     <dialog id="completeProject">
                       <p>Congratulations!</p>
-                      <div class="flex justify-between">
+                      <div class="flex justify-between w-60">
                         <form action="/goals/completeProject/<%= goal.id %>?_method=PUT" method="POST">
                           <button class="btn btn-active btn-primary" type="submit">Confirm!</button>
                         </form>
@@ -113,25 +113,22 @@
 
 
         <dialog id="add_goal">
-            <div class="row">
-                <form class="col s12" action="/goals/createGoal" method="POST">
+            <div class="row flex flex-col">
+                <form class="col s12 items-center" action="/goals/createGoal" method="POST">
                   <div class="row">
                     <div class="input-field col s6">
-                      <input placeholder="Title" id="goal_title" type="text" class="validate" name="goalTitle" required>
-                      <label for="goal_title">Title</label>
+                      <input placeholder="Title" id="goal_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="goalTitle" required>
                     </div>
                     
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <textarea id="goal_description" placeholder="Description" cols="30" rows="10" class="materialize-textarea" name="goalDescription"></textarea>
-                      <label for="password">Description</label>
+                      <textarea id="goal_description" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="goalDescription"></textarea>
                     </div>
                   </div>
                   
                   <div class="row">
                     <input type="submit" class="btn waves-effect waves-light">
-                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                   </div>
                 </form>
               </div>
