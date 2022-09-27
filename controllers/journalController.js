@@ -17,7 +17,18 @@ module.exports = {
         } catch (err) {
           console.log(err);
         }
-      },
+    },
+    getOneJournal: async (req, res) => {
+      try {
+        const entry = await Journals.findById(req.params.id)
+        console.log(entry)
+        res.render('journalEntry.ejs', {
+          entry: entry
+        })
+      }catch(err){
+        console.log(err)
+      }
+    },
     createJournal: async (req, res) => {
       try {
           await Journals.create({
@@ -32,30 +43,15 @@ module.exports = {
         console.log(err)
       }
     },
-    deleteJournal: async (req, res) => {
+    deleteOneJournal: async (req, res) => {
       try {
-          const journalEntry = await Journals.findById( {_id: req.params.id} )
-          await Journals.findByIdAndDelete( {_id: req.params.id} ) 
-          console.log('Journal Entry Deleted')
-          res.redirect(`../${journalEntry.goalId}`)
-    }catch(err){
-      console.log(err)
-    }
+          const entry = await Journals.findById(req.params.id)
+          await Journals.deleteOne( {_id: req.params.id} )
+          console.log('Journal entry deleted')
+          res.redirect(`/journal/${entry.goalId}`)
+
+      }catch(err){
+        console.log(err)
+      }
     },
 }
-
-
-
-
-
-
-// module.exports = {
-//     getJournal: async (req,res)=>{
-//         console.log(req.user)
-//         try{
-//             res.render('journal.ejs',)
-//         }catch(err){
-//             console.log(err)
-//         }
-//     },
-// }

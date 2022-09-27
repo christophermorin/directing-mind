@@ -31,18 +31,13 @@
             <div class="divider">
               <span><%= el.journalDate %></span>
             </div> 
-              <button class="btn journal-list justify-between h-20 shadows">
-                <section class="flex flex-col w-full">
-                  <p><%= el.journalTitle %></p>
-                </section>
-            <!-- <section>
-              <form action="deleteJournal/<%= el.id %>?_method=DELETE" method="POST" class="form-margin">
-                <button class="task-buttons dlt bg-secondary" type="submit">
-                  <i class="material-icons">clear</i>
+              <a href="/journalEntries/<%= el._id %>">
+                <button class="btn journal-list justify-between h-20 shadows">
+                  <section class="flex flex-col w-full">
+                    <p><%= el.journalTitle %></p>
+                  </section>
                 </button>
-              </form>
-            </section> -->
-          </button>
+              </a>
           </li>
      <% }) %>
     </ul>

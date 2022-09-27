@@ -1,0 +1,16 @@
+<%- include('partials/navbar.ejs') %>
+<div class="bg-accent-content flex flex-col items-center page-load">
+    <h1><%= entry.journalTitle %></h1>
+    <section>
+        <p><%= entry.journalText %></p>
+    </section>
+</div>
+<section class="">
+    <form action="deleteJournal/<%= entry.id %>?_method=DELETE" method="POST">
+        <button class="btn btn-active btn-primary" type="submit">Delete Entry</button>
+      </form>
+</section>
+
+
+<%- include('partials/footer.ejs') %>
+<script src="../js/journal.js"></script>
