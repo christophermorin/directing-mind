@@ -1,5 +1,6 @@
 const Goals = require("../models/Goals")
 const Tasks = require("../models/Tasks")
+const Journals = require("../models/Journals")
 
 module.exports = {
     getGoals: async (req,res)=>{
@@ -26,8 +27,9 @@ module.exports = {
     deleteProject: async (req, res) => {
         try{
             await Tasks.deleteMany( {goalId: req.params.id} )
+            await Journals.deleteMany( {goalId: req.params.id} )
             await Goals.deleteOne( {_id: req.params.id} )
-            console.log('Project and all project tasks deleted')
+            console.log('Project and all project tasks and journals deleted')
             res.redirect('/goals')
 
         }catch(err){
