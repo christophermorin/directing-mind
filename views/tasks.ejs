@@ -8,16 +8,24 @@
 
 
     <div class="wrapper">
-      <h1><%= goal.goalTitle %></h1>
-      <p><%= goal.goalDescription %></p>
+      <section class="flex flex-col items-center">
+        <h1 class="m-0"><%= goal.goalTitle %></h1>
+        <p><%= goal.goalDescription %></p>
+      </section>
 
       <span class="countdown font-mono text-2xl">
-        <span style="--value:24;" class="minutes"></span>:
-        <span style="--value:5;" class="seconds"></span>
+        <span style="--value:25;" class="minutes"></span>:
+        <span style="--value:0;" class="seconds"></span>
       </span>
+      <section>
+      <button class="btn btn-active btn-primary">Start</button>
+      <button class="btn btn-active btn-primary">Stop</button>
 
-      <p>Tasks</p>
+      </section>
+
       <button class="btn btn-active btn-primary add-task">Add Task</button>
+      <p>Your Tasks</p>
+
 
 
       <ul class="task-list">
