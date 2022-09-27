@@ -19,7 +19,11 @@ const JournalSchema = new mongoose.Schema({
     goalId: {
         type: String,
         required: true
-    }
+    },
+    userId: {
+        type: String,
+        required: true,
+    },
 })
 
 

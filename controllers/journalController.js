@@ -5,13 +5,25 @@ const Journals = require("../models/Journals")
 
 
 module.exports = {
+    getAllJournals: async (req, res) => {
+      try {
+        const journals = await Journals.find( {userId: req.user.id} )
+        console.log(journals)
+        res.render("allJournals.ejs", { 
+          user: req.user.userName, 
+          journals: journals
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    },
     getJournal: async (req, res) => {
         try {
           const goal = await Goals.findById(req.params.id);
           const journals = await Journals.find( {goalId: req.params.id} )
           res.render("journal.ejs", { 
             goal: goal, 
-            user: req.user, 
+            user: req.user.userName, 
             journals: journals
           });
         } catch (err) {
@@ -34,7 +46,8 @@ module.exports = {
           await Journals.create({
             journalTitle: req.body.journalTitle.trim(),
             journalText: req.body.journalText.trim(),
-            goalId: req.params.id, 
+            goalId: req.params.id,
+            userId: req.user.id 
 
           })
           console.log('Journal Created')
