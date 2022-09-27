@@ -1,7 +1,7 @@
 
     <%- include('partials/navbar.ejs') %>
 
-<div class="bg-accent-content flex flex-col items-center page-load">
+<div class="bg-all flex flex-col items-center page-load">
     
   <div class="max-w-4xl shadow-xl flex flex-col items-center shadows">
     <div class="card-body">
@@ -11,6 +11,7 @@
         <% if (journals.length === 0) { %>
           <p>There are no journals for your <%=goal.goalTitle %> project.</p>
         <%} else { %>
+          <p>See your progress, why not read this past entry?</p>
           <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
           <p> <%= pic.journalTitle %> </p>
           <p class="overflow-hidden h-32"> <%= pic.journalText %></p>
