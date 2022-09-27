@@ -1,4 +1,4 @@
-## Tech used: ![HTML5 BADGE](https://img.shields.io/static/v1?label=|&message=HTML5&color=23555f&style=plastic&logo=html5)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=3c7f5d&style=plastic&logo=ejs)
+## Tech used: ![HTML5 BADGE](https://img.shields.io/static/v1?label=|&message=HTML5&color=23555f&style=plastic&logo=html5)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=3c7f5d&style=plastic&logo=ejs)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)![TAILWIND BADGE](https://img.shields.io/static/v1?label=|&message=TAILWIND&color=285f65&style=plastic&logo=tailwind)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)
 
 
 Directing Mind MVP.
