@@ -9,12 +9,12 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const methodOverride = require('method-override')
 const mainRoutes = require('./routes/main')
-const todoRoutes = require('./routes/todos')
 const dashboardRoutes = require('./routes/dashboard')
 const goalsRoutes = require('./routes/goals')
 const tasksRoutes = require('./routes/tasks')
 const journalRoutes = require('./routes/journal')
 const historyRoutes = require('./routes/history')
+const journalEntryRoutes = require('./routes/journalEntries')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -46,13 +46,13 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes) // Login/Sign Up 
-app.use('/todos', todoRoutes)
 app.use('/dashboard', dashboardRoutes)
 app.use('/goals', goalsRoutes)
 app.use('/tasks', tasksRoutes)
 app.use('/journal', journalRoutes)
+app.use('/journalEntries', journalEntryRoutes)
 app.use('/history', historyRoutes)
- 
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })    

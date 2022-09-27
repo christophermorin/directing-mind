@@ -1,0 +1,12 @@
+<%- include('partials/navbar.ejs') %>
+<div class="bg-accent-content flex flex-col items-center page-load">
+    <h1>Hello <%=user%></h1>
+    <p>Here all journals across all projects are displayed.</p>
+    <ul>
+        <% journals.forEach(el => { %>
+            <li><%= el.journalTitle %></li>
+        <% }) %>
+    </ul>
+</div>
+<%- include('partials/footer.ejs') %>
+<script src="../js/journal.js"></script>
