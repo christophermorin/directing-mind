@@ -3,12 +3,32 @@
   <div class="wrapper">
     <section class="flex flex-col items-center">
       <h1 class="m-0"><%= goal.goalTitle %></h1>
-      <p><%= goal.goalDescription %></p>
     </section>
-      <span class="countdown font-mono text-2xl">
+
+    <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+      
+      
+      <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+        <span class="countdown font-mono text-5xl">
+          <span style="--value:25;"></span>
+        </span>
+        min
+      </div> 
+      <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+        <span class="countdown font-mono text-5xl">
+          <span style="--value:00;"></span>
+        </span>
+        sec
+      </div>
+    </div>
+
+
+      <!-- <span class="countdown font-mono text-2xl">
         <span style="--value:25;" class="minutes"></span>:
         <span style="--value:0;" class="seconds"></span>
-      </span>
+      </span> -->
+
+
     <section>
       <button class="btn btn-active btn-primary">Start</button>
       <button class="btn btn-active btn-primary">Stop</button>
