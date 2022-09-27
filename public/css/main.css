@@ -2072,6 +2072,25 @@ html {
   transition: all 1s cubic-bezier(1, 0, 0, 1);
 }
 
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1rem;
+  white-space: nowrap;
+}
+
+.divider:before,
+  .divider:after {
+  content: "";
+  flex-grow: 1;
+  height: 0.125rem;
+  width: 100%;
+}
+
 .drawer {
   display: grid;
   width: 100%;
@@ -3109,6 +3128,20 @@ body[dir="rtl"] .checkbox:checked,
   content: "−";
 }
 
+.divider:before {
+  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+}
+
+.divider:after {
+  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+}
+
+.divider:not(:empty) {
+  gap: 1rem;
+}
+
 .drawer.drawer-end > .drawer-toggle:checked ~ .drawer-content {
   --tw-translate-x: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3640,6 +3673,11 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 0.75rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -3700,6 +3738,10 @@ body[dir="rtl"] .checkbox:checked,
   max-width: 24rem;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .flex-none {
   flex: none;
 }
@@ -3746,10 +3788,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .gap-2\.5 {
   gap: 0.625rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
 }
 
 .overflow-hidden {
@@ -4091,8 +4129,12 @@ form{
 
 .drawer{
   position: absolute;
-  height: 85vh;
+  height: 90vh;
   width: unset;
+}
+
+.shadows{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .peer:checked ~ .peer-checked\:bg-secondary {
@@ -4114,9 +4156,6 @@ form{
     text-align: left;
   }
 }
-
-
-
 
 
 

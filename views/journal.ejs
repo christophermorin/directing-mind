@@ -1,61 +1,64 @@
 
     <%- include('partials/navbar.ejs') %>
 
-<div class="bg-accent-content flex flex-col justify-between page-load">
+<div class="bg-accent-content flex flex-col items-center page-load">
     
-    <div class=" bg-base-100 shadow-xl flex flex-col justify-center items-center">
-        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            <%= goal.goalTitle %>
-          </h2>
-          <!-- <p><%= journals.length %></p> -->
-          <% if (journals.length === 0) { %>
-            <p>There are no journals for your <%=goal.goalTitle %> project.</p>
-          <%} else { %>
-          
-          
+  <div class="max-w-4xl shadow-xl flex flex-col items-center shadows">
+    <div class="card-body">
+      <h2 class="card-title">
+        <%= goal.goalTitle %>
+      </h2>
+        <% if (journals.length === 0) { %>
+          <p>There are no journals for your <%=goal.goalTitle %> project.</p>
+        <%} else { %>
           <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
           <p> <%= pic.journalTitle %> </p>
-          <p class="overflow-hidden h-32"> <%= pic.journalText %> </p>
-          <% } %>
-
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Read</div> 
-          </div>
+          <p class="overflow-hidden h-32"> <%= pic.journalText %></p>
+        <% } %>
+        <div class="card-actions justify-end">
+          <div class="badge badge-outline">Read</div> 
         </div>
       </div>
+      <button class="btn btn-active btn-primary add-journal my-8">
+        Add Journal
+      </button>
+  </div>
 
-      <div>
-        <ul class="grid grid-cols-1  gap-2.5 justify-center pt-10">     
-            <% journals.forEach(el => { %>   
-         <li class="flex justify-center">
-        <button class="btn journal-list justify-between h-20">
-          <section class="flex flex-col gap-5">
-            <p><%= el.journalTitle %></p>
-
-            <p><%= el.journalDate %></p>
-          </section>
-          <section>
-            <form action="deleteJournal/<%= el.id %>?_method=DELETE" method="POST" class="form-margin">
-              <button class="task-buttons dlt bg-secondary" type="submit"><i class="material-icons">clear</i></button>
-            </form>
-          </section>
+  <div class="flex flex-col justify-center">
+    <ul class="grid grid-cols-1  gap-2.5 justify-center pt-10">     
+      <% journals.forEach(el => { %>   
+         <li class="flex flex-col justify-center items-center">
+            <div class="divider">
+              <span><%= el.journalDate %></span>
+            </div> 
+              <button class="btn journal-list justify-between h-20 shadows">
+                <section class="flex flex-col w-full">
+                  <p><%= el.journalTitle %></p>
+                </section>
+            <!-- <section>
+              <form action="deleteJournal/<%= el.id %>?_method=DELETE" method="POST" class="form-margin">
+                <button class="task-buttons dlt bg-secondary" type="submit">
+                  <i class="material-icons">clear</i>
+                </button>
+              </form>
+            </section> -->
           </button>
-         </li>
-         <% }) %>
-        </ul>
-      </div>
+          </li>
+     <% }) %>
+    </ul>
+  </div>
 
+  <dialog id="add_journal">
     <form action="createJournal/<%= goal.id %>" method="POST">
-        <input type="text" name="journalTitle">
-        <textarea name="journalText" id="journalText" cols="30" rows="10">
-
-        </textarea>
-        <input type="submit">
+      <input type="text" name="journalTitle">
+        <textarea name="journalText" id="journalText" cols="30" rows="10"></textarea>
+      <input type="submit">
     </form>
-    <h1>Journal</h1>
+  </dialog>
 
 </div>
+
 <%- include('partials/footer.ejs') %>
+<script src="../js/journal.js"></script>
+
 
