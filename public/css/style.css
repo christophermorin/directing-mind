@@ -2,212 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-
-h1,h2,h3,h4,h5,h6{
-    margin: 0;
-    padding: 0;
-}
-
-/* ************************************ */
-/* PROJECT STYLES */
-/* ************************************ */
-.add-goal{
-    cursor: pointer;
-}
-#add_goal{
-    width: 350px;
-    margin: auto;
-}
-
-/* .project-wrapper{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    gap: 10px;
-    min-height: 90vh;
-} */
-
-.project-spacing{
-    display: flex;
-    flex-flow: column;
-    gap: 20px;
-}
-
-.project-container{
-    display: flex;
-    flex-flow: column;
-    height: 120px;
-    width: 100%;
-}
-.project-tab{
-    height: 70px;
-    width: 100%;
-    background-color: lightblue;
-}
-.project-info{
-    display: flex;
-    flex-flow: column;
-    padding: 0 10px;
-}
-.project-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-}
-.project-stats{
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-}
-.project-count{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-}
-.project-boxes{
-    min-width: 340px;
-    max-width: 50vw;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.project-task-list{
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-}
-.task-list{
-    min-width: 340px;
-    display: flex;
-    flex-flow: column;
-    gap:10px;
-  }
-.project-task-list li{
-    padding: 0 10px;
-}
-.project-description{
-    text-align: center;
-    padding: 0 10px 10px 10px;
-    font-size: 16px;
-}
-.project-task{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.goal-journal{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
+/* ****************************************************************** */
+/* Custom Styles */
+/* ****************************************************************** */
 
 /* ***************************************** */
-/* TASKS STYLES */
-/* ***************************************** */
-.task-box{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-.task-options{
-    display: flex;
-    align-self: flex-end;
-    gap: 10px;
-}
-.task-buttons{
-    border: none;
-    background: none;
-    cursor: pointer;
-
-}
+/* Complete/Delete Project/Task buttons */
+/* ****************************************** */
 .dlt{
     color: red;
 }
 .cmplt{
     color: green;
 }
-.complete {
-    /* background: green; */
-}
-
-
-
-
-.login-signup-box{
-   text-align: center;
-   padding: 4rem;
-}
-h1{
-    margin-bottom: 5rem;
-    color: rgba(0,0,0,0.5);
-}
+/* ********************************** */
+/* Setting defaults on all forms */
+/* ********************************** */
 form{
     display: flex;
     flex-flow: column;
     gap: 2rem;
 }
-.alert{
-    color: red;
-    padding-bottom: 0.5rem;
-
+/* ************************************** */
+/* Resetting collapse container */
+/* ************************************** */
+.collapse-title, 
+:where(.collapse > input[type="checkbox"]){
+  width: 100%;
+  padding: 0 !important; 
+  padding-right: 0 !important;
+  min-height: 0 !important;
+  transition: background-color 0.2s ease-in-out;
 }
-.index-buttons{
-    display: flex;
-    justify-content: center;
-    padding:3.5rem;
-    gap: 1rem;
+/* ****************************** */
+/* Setting container heights */
+/* ****************************** */
+.navbar{
+  height: 10vh;
+  z-index: 1;
 }
-.login-span{
-    width: 110px;
+.footer{
+  min-height: 5vh;
 }
-
-.wrapper{
-    display: flex;
-    flex-flow: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .form-margin{
-    margin: 0;
-  }
-
-
-  .collapse-title, 
-  :where(.collapse > input[type="checkbox"]){
-    width: 100%;
-    padding: 0 !important; 
-    padding-right: 0 !important;
-    min-height: 0 !important;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  .journal-list{
-    width: 300px;
-  }
-  
-
-  .navbar{
-    height: 10vh;
-  }
-  .footer{
-    min-height: 5vh;
-  }
-  .page-load{
-    min-height: 95vh;
-    padding-top: 10vh;
-  }
-  .drawer{
-    height: 90vh;
-    width: unset;
-    top: 10vh;
-  }
+.page-load{
+  min-height: 95vh;
+  padding-top: 10vh;
+}
+/* ************************ */
+/* Positioning Side Nav Drawer */
+/* ************************ */
+.drawer-position{
+  height: 90vh;
+  width: unset;
+  top: 10vh;
+}
+/* ***************************************************** */
+ /* Temp default backgrounds for all buttons/layouts */
+/* ***************************************************** */
 .bg-all{
     background-color: white;
 }
@@ -215,11 +66,9 @@ form{
     background: black;
     color: white;
 }
-
+/* ******************************************** */
+/* Temp Box Shadows for Project/Task Boxes */
+/* ********************************************* */
 .shadows{
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-
-
-
-

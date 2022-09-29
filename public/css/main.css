@@ -3615,6 +3615,14 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 1.25rem;
 }
 
+.mb-2\.5 {
+  margin-bottom: 0.625rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -3625,6 +3633,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .grid {
   display: grid;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-32 {
@@ -3641,6 +3657,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .w-32 {
@@ -3712,6 +3732,14 @@ body[dir="rtl"] .checkbox:checked,
   justify-content: space-between;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-2\.5 {
+  gap: 0.625rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -3720,20 +3748,17 @@ body[dir="rtl"] .checkbox:checked,
   gap: 1rem;
 }
 
-.gap-2\.5 {
-  gap: 0.625rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -3755,12 +3780,26 @@ body[dir="rtl"] .checkbox:checked,
   stroke: currentColor;
 }
 
+.p-2\.5 {
+  padding: 0.625rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
 .p-4 {
   padding: 1rem;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .pt-2\.5 {
@@ -3804,6 +3843,11 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3820,6 +3864,11 @@ body[dir="rtl"] .checkbox:checked,
 
 .normal-case {
   text-transform: none;
+}
+
+.text-rose-600 {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
 }
 
 .text-neutral-content {
@@ -3844,147 +3893,17 @@ body[dir="rtl"] .checkbox:checked,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-h1,h2,h3,h4,h5,h6{
-  margin: 0;
-  padding: 0;
-}
+/* ****************************************************************** */
 
-/* ************************************ */
+/* Custom Styles */
 
-/* PROJECT STYLES */
-
-/* ************************************ */
-
-.add-goal{
-  cursor: pointer;
-}
-
-#add_goal{
-  width: 350px;
-  margin: auto;
-}
-
-/* .project-wrapper{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    gap: 10px;
-    min-height: 90vh;
-} */
-
-.project-spacing{
-  display: flex;
-  flex-flow: column;
-  gap: 20px;
-}
-
-.project-container{
-  display: flex;
-  flex-flow: column;
-  height: 120px;
-  width: 100%;
-}
-
-.project-tab{
-  height: 70px;
-  width: 100%;
-  background-color: lightblue;
-}
-
-.project-info{
-  display: flex;
-  flex-flow: column;
-  padding: 0 10px;
-}
-
-.project-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-}
-
-.project-stats{
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.project-count{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-}
-
-.project-boxes{
-  min-width: 340px;
-  max-width: 50vw;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.project-task-list{
-  display: flex;
-  flex-flow: column;
-  gap: 10px;
-}
-
-.task-list{
-  min-width: 340px;
-  display: flex;
-  flex-flow: column;
-  gap:10px;
-}
-
-.project-task-list li{
-  padding: 0 10px;
-}
-
-.project-description{
-  text-align: center;
-  padding: 0 10px 10px 10px;
-  font-size: 16px;
-}
-
-.project-task{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.goal-journal{
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
+/* ****************************************************************** */
 
 /* ***************************************** */
 
-/* TASKS STYLES */
+/* Complete/Delete Project/Task buttons */
 
-/* ***************************************** */
-
-.task-box{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.task-options{
-  display: flex;
-  align-self: flex-end;
-  gap: 10px;
-}
-
-.task-buttons{
-  border: none;
-  background: none;
-  cursor: pointer;
-}
+/* ****************************************** */
 
 .dlt{
   color: red;
@@ -3994,19 +3913,11 @@ h1,h2,h3,h4,h5,h6{
   color: green;
 }
 
-.complete {
-  /* background: green; */
-}
+/* ********************************** */
 
-.login-signup-box{
-  text-align: center;
-  padding: 4rem;
-}
+/* Setting defaults on all forms */
 
-h1{
-  margin-bottom: 5rem;
-  color: rgba(0,0,0,0.5);
-}
+/* ********************************** */
 
 form{
   display: flex;
@@ -4014,35 +3925,14 @@ form{
   gap: 2rem;
 }
 
-.alert{
-  color: red;
-  padding-bottom: 0.5rem;
-}
+/* ************************************** */
 
-.index-buttons{
-  display: flex;
-  justify-content: center;
-  padding:3.5rem;
-  gap: 1rem;
-}
+/* Resetting collapse container */
 
-.login-span{
-  width: 110px;
-}
-
-.wrapper{
-  display: flex;
-  flex-flow: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.form-margin{
-  margin: 0;
-}
+/* ************************************** */
 
 .collapse-title, 
-  :where(.collapse > input[type="checkbox"]){
+:where(.collapse > input[type="checkbox"]){
   width: 100%;
   padding: 0 !important;
   padding-right: 0 !important;
@@ -4050,12 +3940,15 @@ form{
   transition: background-color 0.2s ease-in-out;
 }
 
-.journal-list{
-  width: 300px;
-}
+/* ****************************** */
+
+/* Setting container heights */
+
+/* ****************************** */
 
 .navbar{
   height: 10vh;
+  z-index: 1;
 }
 
 .footer{
@@ -4067,11 +3960,23 @@ form{
   padding-top: 10vh;
 }
 
-.drawer{
+/* ************************ */
+
+/* Positioning Side Nav Drawer */
+
+/* ************************ */
+
+.drawer-position{
   height: 90vh;
   width: unset;
   top: 10vh;
 }
+
+/* ***************************************************** */
+
+/* Temp default backgrounds for all buttons/layouts */
+
+/* ***************************************************** */
 
 .bg-all{
   background-color: white;
@@ -4081,6 +3986,12 @@ form{
   background: black;
   color: white;
 }
+
+/* ******************************************** */
+
+/* Temp Box Shadows for Project/Task Boxes */
+
+/* ********************************************* */
 
 .shadows{
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -4095,7 +4006,3 @@ form{
   --tw-text-opacity: 1;
   color: hsl(var(--sc) / var(--tw-text-opacity));
 }
-
-
-
-
