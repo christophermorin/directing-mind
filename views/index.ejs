@@ -21,12 +21,12 @@
     <div class="-content">
           <% if (locals.messages.errors) { %>
               <% messages.errors.forEach( el => { %>
-                  <div class="alert alert-danger"><%= el.msg %></div>
+                  <div class="alert text-rose-600 text-center text-xs mb-2.5"><%= el.msg %></div>
               <% }) %>    
           <% } %>
           <% if (locals.messages.info) { %>
               <% messages.info.forEach( el => { %>
-                  <div class="alert alert-danger"><%= el.msg %></div>
+                  <div class="text-rose-600 text-center text-xs pb-2.5"><%= el.msg %></div>
               <% }) %>    
           <% } %>
           <form action="/login" method="POST">

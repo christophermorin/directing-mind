@@ -32,7 +32,7 @@
               <span><%= el.journalDate %></span>
             </div> 
               <a href="/journalEntries/<%= el._id %>">
-                <button class="btn journal-list justify-between h-20 shadows">
+                <button class="btn justify-between h-20 w-72 shadows">
                   <section class="flex flex-col w-full">
                     <p><%= el.journalTitle %></p>
                   </section>
@@ -55,5 +55,3 @@
 
 <%- include('partials/footer.ejs') %>
 <script src="../js/journal.js"></script>
-
-

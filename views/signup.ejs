@@ -13,7 +13,7 @@
         <h1>Sign Up</h1>
         <% if (locals.messages.errors) { %>
             <% messages.errors.forEach( el => { %>
-                <div class="alert shadow-lg"><%= el.msg %></div>
+                <div class="alert text-rose-600 text-center text-xs shadow-lg pb-2.5"><%= el.msg %></div>
             <% }) %>    
         <% } %>
         <form action="/signup" method="POST">
