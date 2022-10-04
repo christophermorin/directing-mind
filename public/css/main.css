@@ -3607,6 +3607,11 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 2rem;
 }
 
+.mx-36 {
+  margin-left: 9rem;
+  margin-right: 9rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -3621,6 +3626,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-36 {
+  margin-left: 9rem;
+}
+
+.ml-32 {
+  margin-left: 8rem;
 }
 
 .inline-block {
@@ -3714,6 +3727,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -4005,4 +4022,14 @@ form{
 .peer:checked ~ .peer-checked\:text-secondary-content {
   --tw-text-opacity: 1;
   color: hsl(var(--sc) / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:ml-32 {
+    margin-left: 8rem;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
 }
