@@ -5,7 +5,7 @@
       <ul class="flex flex-col gap-5 justify-center md:flex-row flex-wrap">
           <% goals.forEach( goal => { %> 
             <% if (goal.isComplete === false) { %>
-          <li class="w-72 shadows collapse">
+          <li class="w-72 shadows collapse lg:collapse-open">
             <input type="checkbox" class="peer" /> 
               <div class="flex flex-col h-28 justify-between collapse-title">
                 <div class="h-10 bg-blue-500"></div>

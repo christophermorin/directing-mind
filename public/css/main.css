@@ -3607,11 +3607,6 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 2rem;
 }
 
-.mx-36 {
-  margin-left: 9rem;
-  margin-right: 9rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -3626,14 +3621,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.ml-36 {
-  margin-left: 9rem;
-}
-
-.ml-32 {
-  margin-left: 8rem;
 }
 
 .inline-block {
@@ -4025,11 +4012,51 @@ form{
 }
 
 @media (min-width: 768px) {
+  .md\:collapse-open .collapse-content {
+    max-height: 9000px;
+  }
+
+  .md\:collapse-open :where(.collapse-content) {
+    padding-bottom: 1rem;
+    transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  .md\:collapse-open.collapse-arrow .collapse-title:after {
+    --tw-translate-y: -50%;
+    --tw-rotate: 225deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:collapse-open.collapse-plus .collapse-title:after {
+    content: "−";
+  }
+
   .md\:ml-32 {
     margin-left: 8rem;
   }
 
   .md\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:collapse-open .collapse-content {
+    max-height: 9000px;
+  }
+
+  .lg\:collapse-open :where(.collapse-content) {
+    padding-bottom: 1rem;
+    transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  .lg\:collapse-open.collapse-arrow .collapse-title:after {
+    --tw-translate-y: -50%;
+    --tw-rotate: 225deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:collapse-open.collapse-plus .collapse-title:after {
+    content: "−";
   }
 }
