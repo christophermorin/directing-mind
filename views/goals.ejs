@@ -5,56 +5,58 @@
       <ul class="flex flex-col gap-5 justify-center md:flex-row flex-wrap">
           <% goals.forEach( goal => { %> 
             <% if (goal.isComplete === false) { %>
-          <li class="w-72 shadows collapse lg:collapse-open">
+          <li class="w-72 shadows collapse rounded-md bg-zinc-900 lg:collapse-open text-white">
             <input type="checkbox" class="peer" /> 
               <div class="flex flex-col h-28 justify-between collapse-title">
-                <div class="h-10 bg-blue-500"></div>
-                  <div class="px-2.5">
-                    <h2><%= goal.goalTitle %></h2>
+                <div class="h-10 flex items-center pl-2 bg-gray-800"><h2 class="border-b-2 border-cyan-500 px-1 uppercase"><%= goal.goalTitle %></h2></div>
+                  <div class="px-2.5 pb-1">
+                    
                     <section class="flex justify-end gap-5">
-                      <section class="flex items-center gap-2.5">
+                      <section class="flex items-center gap-2.5 px-2">
                         <span>
                           <%= goal.taskCount.toString() %> / <%= goal.taskCount.toString() %> 
                         </span>
                           <span class="material-icons">task</span>
                             <span class="material-icons">auto_stories</span>
                       </section>
-                      <section>
-                        <span class="material-icons peer-checked:bg-secondary peer-checked:text-secondary-content">
+                      <section class="lg:hidden">
+                        <span class="material-icons peer-checked:bg-secondary peer-checked:text-secondary-content ">
                           expand_more
                         </span>
                       </section>
                     </section>
                 </div>
               </div>
-              <div class="collapse-content">
-                <section class="text-center">
-                    <p><%= goal.goalDescription %></p>
+              <div class="collapse-content flex flex-col justify-between">
+                <section class="rounded-md mb-2 text-xs text-stone-400 bg-stone-700/30 pl-1">
+                    <p class="p-1"><%= goal.goalDescription %></p>
+                    <!-- else no description given -->
                 </section>
                 <section>
-                  <ul class="flex flex-col gap-2.5">
+                  <ul class="flex flex-col gap-1">
                     <% tasks.forEach( task => { %>
                       <% if (task.goalId === goal.id) { %>
                       <li>
-                        <section class="shadows flex justify-between p-2.5">
+                        <section class="shadows flex justify-between p-2.5 border border-gray-900 rounded-xl bg-gray-800 text-sm hover:bg-gray-600 ease-in duration-150">
                           <h3><%= task.taskTitle %></h3>
-                            <span class="material-icons">start</span>
+                            <a href="tasks/<%= goal._id%>" class="flex justify-center items-center">
+                              <i class="material-icons">start</i>
+                            </a>
                         </section>
                       </li>
                       <% } %>
+                      <!-- else no task entered -->
                     <% }) %>
                   </ul>
                 </section>
                 <div class="flex flex-col gap-2 mt-2">
-                  <section class="flex justify-center">
+                  <section class="flex justify-center gap-2">
                     <a href="tasks/<%= goal._id%>">
-                      <button class="btn btn-active btn-primary w-32">Begin</button>
+                      <button class="uppercase btn-active btn w-24 shadows project-btn text-stone-400">Begin</button>
                     </a>
-                  </section>
-                  <section class="flex justify-center">
-                      <a href="journal/<%= goal._id%>">
-                        <button class="btn btn-active btn-primary w-32">Journal</button>
-                      </a>
+                    <a href="journal/<%= goal._id%>">
+                      <button class="btn btn-active w-24 shadows project-btn text-stone-400">Journal</button>
+                    </a>
                   </section>
                   <div class="flex justify-end gap-4 pt-4">
               <!-- Delete Project Dialog -->
@@ -68,7 +70,7 @@
                       </div>
                     </dialog>
                     <button class="dlt dlt-project">
-                      <i class="material-icons">clear</i>
+                      <i class="material-icons bg-stone-700/30 rounded-full p-1 hover:bg-red-900 ease-in duration-150">clear</i>
                     </button>
                     <!-- Complete Project Dialog -->
                     <dialog id="completeProject">
@@ -81,8 +83,11 @@
                       </div>
                     </dialog>
                     <button class="complete-project cmplt">
-                      <i class="material-icons">done</i>
+                      <i class="material-icons bg-stone-700/30 rounded-full p-1 hover:bg-green-900 ease-in duration-150">done</i>
                     </button>
+
+                   
+
                   </div>
                 </div>
               </div>
