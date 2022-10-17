@@ -88,3 +88,12 @@ form{
   background-color: rgba(68, 64, 60,1);
 }
 
+.allow-links{
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .allow-links{
+    pointer-events: unset;
+  }
+}
