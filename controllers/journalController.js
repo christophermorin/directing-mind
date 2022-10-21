@@ -1,4 +1,4 @@
-const Goals = require("../models/Goals")
+const Projects = require("../models/Projects")
 const Journals = require("../models/Journals")
 
 
@@ -19,10 +19,10 @@ module.exports = {
     },
     getJournal: async (req, res) => {
         try {
-          const goal = await Goals.findById(req.params.id);
-          const journals = await Journals.find( {goalId: req.params.id} )
+          const project = await Projects.findById(req.params.id);
+          const journals = await Journals.find( {projectId: req.params.id} )
           res.render("journal.ejs", { 
-            goal: goal, 
+            project: project, 
             user: req.user.userName, 
             journals: journals
           });
@@ -47,7 +47,7 @@ module.exports = {
           await Journals.create({
             journalTitle: req.body.journalTitle.trim(),
             journalText: req.body.journalText.trim(),
-            goalId: req.params.id,
+            projectId: req.params.id,
             userId: req.user.id 
 
           })
@@ -62,7 +62,7 @@ module.exports = {
           const entry = await Journals.findById(req.params.id)
           await Journals.deleteOne( {_id: req.params.id} )
           console.log('Journal entry deleted')
-          res.redirect(`/journal/${entry.goalId}`)
+          res.redirect(`/journal/${entry.projectId}`)
 
       }catch(err){
         console.log(err)

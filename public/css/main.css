@@ -3858,6 +3858,14 @@ body[dir="rtl"] .checkbox:checked,
   padding-right: 0.5rem;
 }
 
+.pr-2\.5 {
+  padding-right: 0.625rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .pt-2\.5 {
   padding-top: 0.625rem;
 }
@@ -3888,14 +3896,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-
-.pr-2\.5 {
-  padding-right: 0.625rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
 }
 
 .text-center {

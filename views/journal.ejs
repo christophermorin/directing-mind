@@ -3,10 +3,10 @@
   <div class="max-w-4xl shadow-xl flex flex-col items-center shadows">
     <div class="card-body">
       <h2 class="card-title">
-        <%= goal.goalTitle %>
+        <%= project.projectTitle %>
       </h2>
         <% if (journals.length === 0) { %>
-          <p>There are no journals for your <%=goal.goalTitle %> project.</p>
+          <p>There are no journals for your <%=project.projectTitle %> project.</p>
         <%} else { %>
           <p>See your progress, why not read this past entry?</p>
           <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
@@ -45,10 +45,10 @@
 
   <dialog id="add_journal">
     <div class="row flex flex-col">
-        <form class="col s12 items-center" action="createJournal/<%= goal.id %>" method="POST">
+        <form class="col s12 items-center" action="createJournal/<%= project.id %>" method="POST">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Journal Title" id="goal_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="journalTitle" required>
+              <input placeholder="Journal Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="journalTitle" required>
             </div>
           </div>
           <div class="row">
@@ -68,7 +68,7 @@
 
 
   <!-- <dialog id="add_journal">
-    <form action="createJournal/<%= goal.id %>" method="POST">
+    <form action="createJournal/<%= project.id %>" method="POST">
       <input type="text" name="journalTitle" class="input input-bordered w-full max-w-xs bg-all" placeholder="Journal Title">
         <textarea id="editor" name="journalText" class="textarea textarea-bordered bg-all" cols="30" rows="10" placeholder="Journal Entry" required></textarea>
       <input type="submit">

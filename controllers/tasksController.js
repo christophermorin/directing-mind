@@ -1,4 +1,4 @@
-const Goals = require("../models/Goals")
+const Projects = require("../models/Projects")
 const Tasks = require("../models/Tasks")
 
 
@@ -6,10 +6,10 @@ const Tasks = require("../models/Tasks")
 module.exports = {
     getTasks: async (req, res) => {
         try {
-          const goal = await Goals.findById(req.params.id);
-          const tasks = await Tasks.find({goalId: req.params.id})
+          const project = await Projects.findById(req.params.id);
+          const tasks = await Tasks.find({projectId: req.params.id})
           res.render("tasks.ejs", { 
-            goal: goal, 
+            project: project, 
             tasks: tasks, 
             user: req.user, 
           });
@@ -19,11 +19,11 @@ module.exports = {
       },
     createTask: async (req, res) => {
       try {
-        await Goals.updateOne({_id: req.params.id}, {$inc : {taskCount: 1}})
+        await Projects.updateOne({_id: req.params.id}, {$inc : {taskCount: 1}})
         await Tasks.create( {
           taskTitle: req.body.taskTitle, 
           taskDescription: req.body.taskDescription, 
-          goalId: req.params.id, 
+          projectId: req.params.id, 
           userId: req.user.id
         });
         console.log('New task created')
@@ -35,10 +35,10 @@ module.exports = {
     deleteTask: async (req, res) => {
       try {
         const task = await Tasks.findById( {_id: req.params.id} )
-        await Goals.updateOne({_id: task.goalId}, {$inc : {taskCount: -1}})
+        await Projects.updateOne({_id: task.projectId}, {$inc : {taskCount: -1}})
         await Tasks.deleteOne( {_id: req.params.id})
         console.log('Task deleted')
-        res.redirect(`../${task.goalId}`)
+        res.redirect(`../${task.projectId}`)
       }catch(err){
         console.log(err)
       }
@@ -52,7 +52,7 @@ module.exports = {
           }
         )
         console.log('Task Complete')
-        res.redirect(`../${post.goalId}`)
+        res.redirect(`../${post.projectId}`)
       }catch(err){
         console.log(err)
       }
