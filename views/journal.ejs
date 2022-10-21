@@ -10,8 +10,8 @@
         <%} else { %>
           <p>See your progress, why not read this past entry?</p>
           <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
-          <p> <%= pic.journalTitle %> </p>
-          <p class="overflow-hidden h-32"> <%= pic.journalText %></p>
+          <p> <%- pic.journalTitle %> </p>
+          <p class="overflow-hidden h-32"> <%- pic.journalText %></p>
         <div class="card-actions justify-end">
           <a href="/journalEntries/<%= pic._id %>">
           <div class="badge badge-outline">Read</div>
@@ -44,12 +44,36 @@
   </div>
 
   <dialog id="add_journal">
+    <div class="row flex flex-col">
+        <form class="col s12 items-center" action="createJournal/<%= goal.id %>" method="POST">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Journal Title" id="goal_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="journalTitle" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12" id="editor-field">
+              <textarea id="editor" placeholder="Journal Text" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="journalText"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <input type="submit" class="btn">
+          </div>
+        </form>
+      </div>
+</dialog>
+
+
+
+
+
+  <!-- <dialog id="add_journal">
     <form action="createJournal/<%= goal.id %>" method="POST">
       <input type="text" name="journalTitle" class="input input-bordered w-full max-w-xs bg-all" placeholder="Journal Title">
-        <textarea name="journalText" class="textarea textarea-bordered bg-all" id="journalText" cols="30" rows="10" placeholder="Journal Entry" required></textarea>
+        <textarea id="editor" name="journalText" class="textarea textarea-bordered bg-all" cols="30" rows="10" placeholder="Journal Entry" required></textarea>
       <input type="submit">
     </form>
-  </dialog>
+  </dialog> -->
 
 </div>
 

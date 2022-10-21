@@ -42,6 +42,7 @@ module.exports = {
       }
     },
     createJournal: async (req, res) => {
+      console.log(req.body.journalText)
       try {
           await Journals.create({
             journalTitle: req.body.journalTitle.trim(),

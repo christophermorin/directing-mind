@@ -44,7 +44,7 @@
     <% tasks.forEach (el => { %>
       <li class="collapse shadows w-72" tabindex="0">
         <div class="flex items-center justify-between p-2.5 shadows <%= el.isComplete === true ? 'complete' : '' %> ">
-          <p> <%= el.taskTitle %> </p>
+          <p> <%- el.taskTitle %> </p>
           <section class="flex gap-2.5">
               <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
                 <button class="dlt" type="submit"><i class="material-icons">clear</i></button>
@@ -57,7 +57,7 @@
         </div>
         <div class="collapse-content">
           <section>
-              <p><%= el.taskDescription %></p>
+              <p><%- el.taskDescription %></p>
           </section>
         </div>
       </li>
@@ -73,8 +73,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <textarea id="task_description" placeholder="Description" cols="30" rows="10" class="textarea textarea-bordered bg-all" name="taskDescription"></textarea>
+            <div class="input-field col s12" id="editor-field">
+              <textarea id="editor" placeholder="Description" cols="30" rows="10" class="textarea textarea-bordered bg-all" name="taskDescription"></textarea>
             </div>
           </div>
           <div class="row">

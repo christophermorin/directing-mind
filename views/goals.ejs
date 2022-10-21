@@ -27,10 +27,15 @@
                     </section>
                 </div>
               </div>
+             
               <div class="collapse-content flex flex-col justify-between">
                 <section class="rounded-md mb-2 text-xs text-stone-400 bg-stone-700/30 pl-1">
-                    <p class="p-1"><%= goal.goalDescription %></p>
+                  <% if (goal.goalDescription) { %>
+                    <p class="p-1"> <%- goal.goalDescription %> </p>
                     <!-- else no description given -->
+                  <% } else  { %>
+                    <p class="text-center">No description</p>
+                  <% } %>
                 </section>
                 <section>
                   <ul class="flex flex-col gap-1">
@@ -44,6 +49,7 @@
                             </a>
                         </section>
                       </li>
+                      
                       <% } %>
                       <!-- else no task entered -->
                     <% }) %>
@@ -105,8 +111,8 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="input-field col s12">
-                      <textarea id="goal_description" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="goalDescription"></textarea>
+                    <div class="input-field col s12" id="editor-field">
+                      <textarea id="editor" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="goalDescription"></textarea>
                     </div>
                   </div>
                   <div class="row">
