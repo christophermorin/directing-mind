@@ -12,11 +12,11 @@ Most importantly record your progress your achievements and the lessons you've l
 
 ## Optimizations
 - [ ] Rebuild in React (New project).
-- [ ] Optimize POMO clock and options.
+- [X] Optimize POMO clock and options.
 - [ ] Add History. (Total Projects complete, tasks complete, time spent working and more.).
 - [ ] Add Resources page (Literature/Podcast links on focus/completing goals).
 - [X] Remove unused CSS rules after multiple framework changes.
-- [ ] Naming conventions.
+- [X] Naming conventions.
 
 
 ## Lessons Learned:
