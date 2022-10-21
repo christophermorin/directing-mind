@@ -1,9 +1,9 @@
 // Add a new Project
-const addGoal = document.querySelector('.add-goal')
-const openGoalDialog = document.getElementById('add_goal')
+const addProject = document.querySelector('.add-project')
+const openProjectDialog = document.getElementById('add_project')
 
-addGoal.addEventListener('click', () => {
-    openGoalDialog.showModal()
+addProject.addEventListener('click', () => {
+    openProjectDialog.showModal()
 })
 
 // Open/Close Delete Project Modal

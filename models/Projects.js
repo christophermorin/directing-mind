@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const GoalsSchema = new mongoose.Schema({
-    goalTitle: {
+const ProjectsSchema = new mongoose.Schema({
+    projectTitle: {
         type: String,
         required: true
     },
-    goalDescription: {
+    projectDescription: {
         type: String,
         required: false,
     },
@@ -24,4 +24,4 @@ const GoalsSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Goals', GoalsSchema)
+module.exports = mongoose.model('Projects', ProjectsSchema)

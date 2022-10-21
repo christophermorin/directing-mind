@@ -16,7 +16,7 @@ const JournalSchema = new mongoose.Schema({
         required: true,
 
     },
-    goalId: {
+    projectId: {
         type: String,
         required: true
     },

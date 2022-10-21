@@ -2,7 +2,7 @@
 <div class="bg-all flex flex-col justify-between page-load">
   <div class="flex flex-col items-center gap-5">
     <section class="flex flex-col items-center">
-      <h1 class="m-0"><%= goal.goalTitle %></h1>
+      <h1 class="m-0"><%= project.projectTitle %></h1>
     </section>
     <!-- Pomo Clock -->
     <div class="grid grid-flow-col gap-5 text-center auto-cols-max">  
@@ -66,7 +66,7 @@
     <!-- Add Task Modal -->
     <dialog id="add_task">  
     <div class="row">
-        <form class="col s12 items-center" action="createTask/<%= goal.id %>" method="POST">
+        <form class="col s12 items-center" action="createTask/<%= project.id %>" method="POST">
           <div class="row">
             <div class="input-field col s6">
               <input placeholder="Title" id="task_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="taskTitle" required>

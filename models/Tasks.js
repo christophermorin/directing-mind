@@ -9,7 +9,7 @@ const TasksSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    goalId: {
+    projectId: {
         type: String,
         required: true,
     },
