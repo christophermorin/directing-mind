@@ -61,7 +61,7 @@ form{
  /* Temp default backgrounds for all buttons/layouts */
 /* ***************************************************** */
 .bg-all{
-    background-color: white;
+    background-color: black;
 }
 .bg-nav{
     background: black;
@@ -92,8 +92,18 @@ form{
   pointer-events: none;
 }
 
+
+#editor-field{
+  min-width: 300px;
+  max-width: 350px;
+}
+
+
 @media (min-width: 1024px) {
   .allow-links{
     pointer-events: unset;
+  }
+  #editor-field{
+    max-width: 600px;
   }
 }
