@@ -66,9 +66,12 @@
                   </section>
                   <div class="flex justify-end gap-4 pt-4">
               <!-- Delete Project Dialog -->
-                    <dialog id="deleteProject">
-                      <p>This will also delete all tasks and journals for this Project. Are you sure?</p>
-                      <div class="flex justify-between">
+                    <dialog id="deleteProject" class="bg-black border-4 border-gray-900 text-white">
+                      <section class="flex flex-col items-center">
+                        <p>This will also delete all tasks and journals for this Project.</p>
+                        <p>Are you sure?</p>
+                      </section>
+                      <div class="flex justify-center gap-8 pt-4">
                         <form action="/projects/deleteProject/<%= project.id %>?_method=DELETE" method="POST">
                           <button class="btn btn-active btn-primary" type="submit">Yes</button>
                         </form>
@@ -79,9 +82,9 @@
                       <i class="material-icons bg-stone-700/30 rounded-full p-1 hover:bg-red-900 ease-in duration-150">clear</i>
                     </button>
                     <!-- Complete Project Dialog -->
-                    <dialog id="completeProject">
-                      <p>Congratulations!</p>
-                      <div class="flex justify-between w-60">
+                    <dialog id="completeProject" class="bg-black border-4 border-gray-900 text-white">
+                      <p class="text-center">Project Complete!</p>
+                      <div class="flex justify-between w-60 pt-4">
                         <form action="/projects/completeProject/<%= project.id %>?_method=PUT" method="POST">
                           <button class="btn btn-active btn-primary" type="submit">Confirm!</button>
                         </form>
@@ -102,21 +105,21 @@
             <% }) %>
           </ul>
          
-        <dialog id="add_project">
+        <dialog id="add_project" class="bg-black border-4 border-gray-900">
             <div class="row flex flex-col">
                 <form class="col s12 items-center" action="/projects/createProject" method="POST">
                   <div class="row">
                     <div class="input-field col s6">
-                      <input placeholder="Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="projectTitle" required>
+                      <input placeholder="Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs bg-gray-800 text-white" name="projectTitle" required>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12" id="editor-field">
-                      <textarea id="editor" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="projectDescription"></textarea>
+                      <textarea id="editor" placeholder="Description" cols="25" rows="10" class="textarea textarea-bordered" name="projectDescription"></textarea>
                     </div>
                   </div>
                   <div class="row">
-                    <input type="submit" class="btn">
+                    <input type="submit" class="btn bg-gray-800">
                   </div>
                 </form>
               </div>

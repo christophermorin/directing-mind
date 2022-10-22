@@ -64,12 +64,12 @@
     <% }) %>
     </ul>
     <!-- Add Task Modal -->
-    <dialog id="add_task">  
+    <dialog id="add_task" class="bg-black border-4 border-gray-900">  
     <div class="row">
         <form class="col s12 items-center" action="createTask/<%= project.id %>" method="POST">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Title" id="task_title" type="text" class="input input-bordered w-full max-w-xs bg-all" name="taskTitle" required>
+              <input placeholder="Title" id="task_title" type="text" class="input input-bordered w-full max-w-xs bg-gray-800 text-white" name="taskTitle" required>
             </div>
           </div>
           <div class="row">
@@ -78,7 +78,7 @@
             </div>
           </div>
           <div class="row">
-            <input type="submit" class="btn">
+            <input type="submit" class="btn bg-gray-800">
           </div>
         </form>
       </div>
