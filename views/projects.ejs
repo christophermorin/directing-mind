@@ -5,8 +5,8 @@
       <ul class="flex flex-col gap-5 justify-center md:flex-row flex-wrap">
           <% projects.forEach( project => { %> 
             <% if (project.isComplete === false) { %>
-          <li class="w-72 shadows collapse rounded-md bg-zinc-900 lg:collapse-open text-white">
-            <input type="checkbox" class="peer" /> 
+          <li tabindex="0" class="w-72 shadows collapse collapse-plus rounded-md bg-zinc-900 lg:collapse-open text-white"  >
+            <input type="checkbox" />
               <div class="flex flex-col h-28 justify-between collapse-title">
                 <div class="h-10 flex items-center pl-2 bg-gray-800"><h2 class="border-b-2 border-cyan-500 px-1 uppercase"><%= project.projectTitle %></h2></div>
                   <div class="px-2.5 pb-1">
@@ -19,16 +19,17 @@
                           <span class="material-icons">task</span>
                             <span class="material-icons">auto_stories</span>
                       </section>
-                      <section class="lg:hidden">
+                      <!-- <section class="lg:hidden">
                         <span class="material-icons peer-checked:bg-secondary peer-checked:text-secondary-content ">
                           expand_more
                         </span>
-                      </section>
+                      </section> -->
                     </section>
                 </div>
               </div>
              
               <div class="collapse-content flex flex-col justify-between">
+                
                 <section class="rounded-md mb-2 text-xs text-stone-400 bg-stone-700/30 pl-1">
                   <% if (project.projectDescription) { %>
                     <p class="p-1"> <%- project.projectDescription %> </p>

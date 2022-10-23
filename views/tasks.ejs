@@ -42,10 +42,10 @@
     <!-- Task List -->
     <ul class="flex flex-col gap-2.5">
     <% tasks.forEach (el => { %>
-      <li class="collapse shadows w-72" tabindex="0">
-        <div class="flex items-center justify-between p-2.5 shadows <%= el.isComplete === true ? 'complete' : '' %> ">
+      <li tabindex="0" class="collapse shadows w-72 rounded-md " >
+        <div class="flex items-center justify-between p-2.5 shadows border border-gray-900  bg-gray-800 text-sm hover:bg-gray-600 ease-in duration-150 <%= el.isComplete === true ? 'complete' : '' %> ">
           <p> <%- el.taskTitle %> </p>
-          <section class="flex gap-2.5">
+          <section class="flex gap-2.5 ">
               <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
                 <button class="dlt" type="submit"><i class="material-icons">clear</i></button>
               </form>
@@ -53,9 +53,10 @@
                 <button class="cmplt" type="submit"><i class="material-icons">done</i></button>
               </form>
               <i class="material-icons">keyboard_double_arrow_down</i>
+             
           </section>
         </div>
-        <div class="collapse-content">
+        <div class="collapse-content bg-zinc-900 text-sm">
           <section>
               <p><%- el.taskDescription %></p>
           </section>
