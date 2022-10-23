@@ -93,15 +93,22 @@ form{
 }
 
 .ck-content{
-  height: 500px;
+  height: 300px;
 }
 
+/* .ck.ck-editor__main > .ck-editor__editable{
+  background: black !important;
+} */
 
 
 #editor-field{
   min-width: 300px;
   max-width: 350px;
 }
+
+
+
+
 
 @media (min-width: 1024px) {
   .allow-links{
