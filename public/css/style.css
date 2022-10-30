@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
 /* ****************************************************************** */
 /* Custom Styles */
 /* ****************************************************************** */
@@ -9,12 +14,7 @@
 /* ***************************************** */
 /* Complete/Delete Project/Task buttons */
 /* ****************************************** */
-.dlt{
-    color: red;
-}
-.cmplt{
-    color: green;
-}
+
 
 /* ********************************** */
 /* Setting defaults on all forms */
@@ -34,6 +34,14 @@ form{
   padding-right: 0 !important;
   min-height: 0 !important;
   transition: background-color 0.2s ease-in-out;
+}
+
+.remove-padding{
+  padding-bottom: 0 !important; 
+}
+.remove-padding-task{
+  padding-bottom: 0 !important;
+ 
 }
 /* ****************************** */
 /* Setting container heights */
@@ -61,27 +69,48 @@ form{
  /* Temp default backgrounds for all buttons/layouts */
 /* ***************************************************** */
 .bg-all{
-    background-color: black;
+    background-color: #07080C;
 }
-.bg-nav{
-    background: black;
-    color: white;
+.bg-all-nav{
+  background: linear-gradient(to top, #07080C 10%, #273550);
 }
+.bg-project-card{
+  background: linear-gradient(to left top, #07080C 10%, #1a2336 60%);
+}
+/* .bg-project-card{
+  background: linear-gradient(to left bottom, #07080C 20%, #273550);
+} */
+.bg-project-card-corner{
+  background: linear-gradient(to left top, #07080C 60%, #273550);
+}
+.border-card{
+  border-top: 2px solid #273550;
+  border-left: 2px solid #273550;
+  border-right: 2px solid #273550;
+}
+.bg-task{
+  background-color: #4a577367;
+}
+.bg-task-desc{
+  /* background-color: #4a5773e4; */
+  background-color: #4a5773bb;
+}
+
 /* ******************************************** */
 /* Temp Box Shadows for Project/Task Boxes */
 /* ********************************************* */
 .shadows{
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(21 94 117);
 }
 
 .btn{
   height: 2rem;
   min-height: 2rem;
-  
+  border-radius: 0;
 }
 
 .project-btn{
-  background-color: rgba(68, 64, 60,0.3);
+  background-color: white
   
 }
 .project-btn:hover{

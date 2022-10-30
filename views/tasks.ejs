@@ -1,36 +1,37 @@
 <%- include('partials/navbar.ejs') %>
-<div class="bg-all flex flex-col justify-between page-load">
+<div class="bg-all flex flex-col justify-between page-load ">
   <div class="flex flex-col items-center gap-5">
-    <section class="flex flex-col items-center">
-      <h1 class="m-0"><%= project.projectTitle %></h1>
-    </section>
-    <!-- Pomo Clock -->
-    <div class="grid grid-flow-col gap-5 text-center auto-cols-max">  
-      <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span class="countdown font-mono text-5xl">
-          <span style="--value:00" class="minutes"></span>
-        </span>
-        min
-      </div> 
-      <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span class="countdown font-mono text-5xl">
-          <span style="--value:00" class="seconds sec"></span>
-        </span>
-        sec
-      </div>
-    </div>
-
-
-      <!-- <span class="countdown font-mono text-2xl">
-        <span style="--value:25;" class="minutes"></span>:
-        <span style="--value:0;" class="seconds"></span>
-      </span> -->
-      <section id="setTime">
-        <button class="btn btn-active btn-primary" id="t15">15</button>
-        <button class="btn btn-active btn-primary" id="t25">25</button>
-        <button class="btn btn-active btn-primary" id="t45">45</button>
-        <button class="btn btn-active btn-primary" id="t60">60</button>
+    
+      <section class="flex flex-col items-center">
+        <h1 class="m-0"><%= project.projectTitle %></h1>
       </section>
+      <!-- Pomo Clock -->
+      <div class="grid grid-flow-col gap-5 text-center auto-cols-max">  
+        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:00" class="minutes"></span>
+          </span>
+          min
+        </div> 
+        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+          <span class="countdown font-mono text-5xl">
+            <span style="--value:00" class="seconds sec"></span>
+          </span>
+          sec
+        </div>
+      </div>
+
+
+        <!-- <span class="countdown font-mono text-2xl">
+          <span style="--value:25;" class="minutes"></span>:
+          <span style="--value:0;" class="seconds"></span>
+        </span> -->
+        <section id="setTime">
+          <button class="btn btn-active btn-primary" id="t15">15</button>
+          <button class="btn btn-active btn-primary" id="t25">25</button>
+          <button class="btn btn-active btn-primary" id="t45">45</button>
+          <button class="btn btn-active btn-primary" id="t60">60</button>
+        </section>
     <!-- Clock Buttons -->
     <section>
       <button class="btn btn-active btn-primary" id="start">Start</button>
@@ -42,8 +43,8 @@
     <!-- Task List -->
     <ul class="flex flex-col gap-2.5">
     <% tasks.forEach (el => { %>
-      <li tabindex="0" class="collapse shadows w-72 rounded-md " >
-        <div class="flex items-center justify-between p-2.5 shadows border border-gray-900  bg-gray-800 text-sm hover:bg-gray-600 ease-in duration-150 <%= el.isComplete === true ? 'complete' : '' %> ">
+      <li tabindex="0" class="collapse shadows w-72 " >
+        <div class="flex items-center justify-between p-2.5 border-l-2 border-cyan-500 bg-task text-sm hover:bg-cyan-700 ease-in duration-150 hover:border-cyan-200 <%= el.isComplete === true ? 'complete' : '' %> ">
           <p> <%- el.taskTitle %> </p>
           <section class="flex gap-2.5 ">
               <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
@@ -52,11 +53,11 @@
               <form action="completeTask/<%= el.id %>?_method=PUT" method="POST">
                 <button class="cmplt" type="submit"><i class="material-icons">done</i></button>
               </form>
-              <i class="material-icons">keyboard_double_arrow_down</i>
+              <!-- <i class="material-icons">keyboard_double_arrow_down</i> -->
              
           </section>
         </div>
-        <div class="collapse-content bg-zinc-900 text-sm">
+        <div class="collapse-content bg-teal-300/30 text-sm border-l-2 border-teal-300 remove-padding-task">
           <section>
               <p><%- el.taskDescription %></p>
           </section>
