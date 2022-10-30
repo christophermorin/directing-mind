@@ -1,23 +1,24 @@
 <%- include('partials/navbar.ejs') %>
 <div class="bg-all flex flex-col justify-between page-load">
-  <div class="flex flex-col gap-5 items-center pt-2.5 md:ml-32">
-    <button class="btn btn-active btn-primary add-project">Add Project</button>
+  <div class="flex flex-col gap-5 items-center pt-2.5 md:ml-96 md:items-start">
+    <button class="btn btn-active btn-primary add-project md:self-center">Add Project</button>
       <ul class="flex flex-col gap-5 justify-center md:flex-row flex-wrap">
           <% projects.forEach( project => { %> 
             <% if (project.isComplete === false) { %>
-          <li tabindex="0" class="w-72 shadows collapse collapse-plus rounded-md bg-zinc-900 lg:collapse-open text-white"  >
+          <li tabindex="0" class="w-72 border-l-2 border-cyan-500 collapse collapse-plus rounded-md bg-project-card  lg:collapse-open text-slate-300"  >
             <input type="checkbox" />
-              <div class="flex flex-col h-28 justify-between collapse-title">
-                <div class="h-10 flex items-center pl-2 bg-gray-800"><h2 class="border-b-2 border-cyan-500 px-1 uppercase"><%= project.projectTitle %></h2></div>
+              <div class="flex flex-col h-16 justify-between collapse-title">
+                <div class="h-10 flex items-center pl-2 "><h2 class="border-b-2 border-yellow-500 px-1 uppercase text-white"><%= project.projectTitle %></h2></div>
                   <div class="px-2.5 pb-1">
                     
-                    <section class="flex justify-end gap-5">
+                    <section class="flex justify-end gap-5 ">
                       <section class="flex items-center gap-2.5 px-2">
                         <span>
                           <%= project.taskCount.toString() %> / <%= project.taskCount.toString() %> 
                         </span>
                           <span class="material-icons">task</span>
                             <span class="material-icons">auto_stories</span>
+                            
                       </section>
                       <!-- <section class="lg:hidden">
                         <span class="material-icons peer-checked:bg-secondary peer-checked:text-secondary-content ">
@@ -28,11 +29,11 @@
                 </div>
               </div>
              
-              <div class="collapse-content flex flex-col justify-between">
+              <div class="collapse-content flex flex-col justify-between remove-padding">
                 
-                <section class="rounded-md mb-2 text-xs text-stone-400 bg-stone-700/30 pl-1">
+                <section class=" mb-2 text-sm text-slate-300 bg-cyan-900 p-2 border-l-2 border-white hover:border-teal-100 hover:bg-cyan-700 ease-in duration-150">
                   <% if (project.projectDescription) { %>
-                    <p class="p-1"> <%- project.projectDescription %> </p>
+                    <p> <%- project.projectDescription %> </p>
                     <!-- else no description given -->
                   <% } else  { %>
                     <p class="text-center">No description</p>
@@ -43,11 +44,14 @@
                     <% tasks.forEach( task => { %>
                       <% if (task.projectId === project.id) { %>
                       <li>
-                        <section class="shadows flex justify-between p-2.5 border border-gray-900 rounded-xl bg-gray-800 text-sm hover:bg-gray-600 ease-in duration-150">
+                        <section class="flex grow gap-2 px-2.5 py-1 border-l-2 border-cyan-500 bg-task text-sm hover:bg-cyan-700 ease-in duration-150 hover:border-cyan-200">
+                          <span class="material-symbols-outlined text-yellow-500">
+                            star
+                            </span>
                           <h3><%= task.taskTitle %></h3>
-                            <a href="tasks/<%= project._id%>" class="flex justify-center items-center">
+                            <!-- <a href="tasks/<%= project._id%>" class="flex justify-center items-center">
                               <i class="material-icons">start</i>
-                            </a>
+                            </a> -->
                         </section>
                       </li>
                       
@@ -59,15 +63,15 @@
                 <div class="flex flex-col gap-2 mt-2">
                   <section class="flex justify-center gap-2">
                     <a href="tasks/<%= project._id%>">
-                      <button class="uppercase btn-active btn w-24 shadows project-btn text-stone-400">Begin</button>
+                      <button class="uppercase btn-active btn w-24 text-yellow-500 bg-task border-1 border-yellow-500 hover:border-yellow-500">Begin</button>
                     </a>
                     <a href="journal/<%= project._id%>">
-                      <button class="btn btn-active w-24 shadows project-btn text-stone-400">Journal</button>
+                      <button class="btn btn-active w-24 bg-task text-yellow-500 border-1 border-yellow-500 hover:border-yellow-500">Journal</button>
                     </a>
                   </section>
-                  <div class="flex justify-end gap-4 pt-4">
+                  <div class="flex justify-end gap-2 pt-4">
               <!-- Delete Project Dialog -->
-                    <dialog id="deleteProject" class="bg-black border-4 border-gray-900 text-white">
+                    <dialog id="deleteProject" class="bg-cyan-900 border-4 border-gray-900 text-white">
                       <section class="flex flex-col items-center">
                         <p>This will also delete all tasks and journals for this Project.</p>
                         <p>Are you sure?</p>
@@ -79,8 +83,8 @@
                         <button class="btn btn-active btn-primary close-delete">No</button>
                       </div>
                     </dialog>
-                    <button class="dlt dlt-project">
-                      <i class="material-icons bg-stone-700/30 rounded-full p-1 hover:bg-red-900 ease-in duration-150">clear</i>
+                    <button class="text-red-700 dlt-project">
+                      <i class="material-icons rounded-full p-1 hover:text-red-400 ease-in duration-150">clear</i>
                     </button>
                     <!-- Complete Project Dialog -->
                     <dialog id="completeProject" class="bg-black border-4 border-gray-900 text-white">
@@ -92,9 +96,10 @@
                         <button class="btn btn-active btn-primary close-complete" type="submit">Not yet!</button>
                       </div>
                     </dialog>
-                    <button class="complete-project cmplt">
-                      <i class="material-icons bg-stone-700/30 rounded-full p-1 hover:bg-green-900 ease-in duration-150">done</i>
+                    <button class="complete-project text-green-700">
+                      <i class="material-icons rounded-full p-1 hover:text-green-400 ease-in duration-150">done</i>
                     </button>
+                    
 
                    
 
@@ -106,12 +111,12 @@
             <% }) %>
           </ul>
          
-        <dialog id="add_project" class="bg-black border-4 border-gray-900">
+        <dialog id="add_project" class="bg-all-nav border-4 border-gray-900">
             <div class="row flex flex-col">
                 <form class="col s12 items-center" action="/projects/createProject" method="POST">
                   <div class="row">
                     <div class="input-field col s6">
-                      <input placeholder="Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs bg-gray-800 text-white" name="projectTitle" required>
+                      <input placeholder="Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs border-cyan-500 bg-task text-white" name="projectTitle" required>
                     </div>
                   </div>
                   <div class="row">
@@ -120,7 +125,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <input type="submit" class="btn bg-gray-800">
+                    <input type="submit" class="btn border-cyan-500 bg-task">
                   </div>
                 </form>
               </div>
