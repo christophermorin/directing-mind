@@ -1,8 +1,15 @@
+// Open Add Task modal
 const addTask = document.querySelector('.add-task')
 const openTaskDialog = document.getElementById('add_task')
 
 addTask.addEventListener('click', () => {
     openTaskDialog.showModal()
+})
+
+// Close Add Task modal
+const closeAddTask = document.querySelector('.close-add-task')
+closeAddTask.addEventListener('click', () => {
+    openTaskDialog.close()
 })
 
 let secondsVal = 0

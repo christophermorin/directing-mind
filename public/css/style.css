@@ -76,6 +76,7 @@ form{
 }
 .bg-project-card{
   background: linear-gradient(to left top, #07080C 10%, #1a2336 60%);
+
 }
 /* .bg-project-card{
   background: linear-gradient(to left bottom, #07080C 20%, #273550);
@@ -100,14 +101,15 @@ form{
 /* Temp Box Shadows for Project/Task Boxes */
 /* ********************************************* */
 .shadows{
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(21 94 117);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 2px rgba(21 94 117);
 }
 
 .btn{
-  height: 2rem;
+  height: 2.5rem;
   min-height: 2rem;
-  border-radius: 0;
+  border-radius: 6px;
 }
+
 
 .project-btn{
   background-color: white
@@ -125,6 +127,13 @@ form{
   height: 300px;
 }
 
+
+
+#complete{
+  background: green  !important;
+  color: red;
+
+}
 /* .ck.ck-editor__main > .ck-editor__editable{
   background: black !important;
 } */

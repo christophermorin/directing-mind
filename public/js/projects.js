@@ -6,6 +6,14 @@ addProject.addEventListener('click', () => {
     openProjectDialog.showModal()
 })
 
+// Close Add modal
+const closeProjectAdd = document.querySelector('.close-add-project')
+closeProjectAdd.addEventListener('click', () => {
+    openProjectDialog.close()
+})
+
+
+
 // Open/Close Delete Project Modal
 const deleteProject = document.querySelectorAll('.dlt-project')
 const closeDeleteProject = document.querySelectorAll('.close-delete')
