@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Main</title>
 </head>
-<body>
+<body class="bg-slate-900">
   
   <!--
 Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide any of your page content!
@@ -43,8 +43,8 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
 </style>
 
 <!-- Navbar start -->
-<nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-gray-700 px-4 sm:justify-between">
-  <ul class="breadcrumb hidden flex-row items-center py-4 text-lg text-white sm:flex">
+<nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-slate-800/50  px-4 sm:justify-between">
+  <ul class="breadcrumb hidden flex-row items-center py-4 text-lg text-white sm:flex ">
       <li class="inline">
           <a href="#">Direct Mind</a>
       </li>
@@ -66,21 +66,21 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
 <div id="containerSidebar" class="z-40">
   <div class="navbar-menu relative z-40">
       <nav id="sidebar"
-          class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-gray-700 pt-6 pb-8 sm:max-w-xs lg:w-80 2xl:translate-x-0 2xl:translate-y-0">
+          class="fixed left-0 bottom-0 top-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto  pt-6 pb-8 sm:max-w-xs lg:w-80 2xl:translate-x-0 2xl:translate-y-0 bg-slate-800">
           <!-- one category / navigation group -->
           <div class="px-4 pb-6">
-              <h3 class="mb-2 text-xs font-medium uppercase text-gray-500">
+              <h3 class="mb-2 text-xs font-medium uppercase text-white">
                   Main
               </h3>
               <ul class="mb-8 text-sm font-medium">
                   <li>
-                      <a class="active flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                      <a class="active flex items-center rounded py-3 pl-3 pr-4 text-cyan-400 hover:bg-gray-600"
                           href="/projects">
                           <span class="select-none">Projects</span>
                       </a>
                   </li>
                   <li>
-                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-cyan-400 hover:bg-gray-600"
                           href="/journal">
                           <span class="select-none">Journals</span>
                       </a>
@@ -91,18 +91,18 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
 
           <!-- example copies start -->
           <div class="px-4 pb-6">
-              <h3 class="mb-2 text-xs font-medium uppercase text-gray-500">
+              <h3 class="mb-2 text-xs font-medium uppercase text-white">
                   More
               </h3>
               <ul class="mb-8 text-sm font-medium">
                   <li>
-                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-cyan-400 hover:bg-gray-600"
                           href="#tc">
                           <span class="select-none">History</span>
                       </a>
                   </li>
                   <li>
-                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-cyan-400 hover:bg-gray-600"
                           href="#privacy">
                           <span class="select-none">Resources</span>
                       </a>
@@ -113,7 +113,7 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
           <div class="px-4 pb-6">
               <ul class="mb-8 text-sm font-medium">
                   <li>
-                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                      <a class="flex items-center rounded py-3 pl-3 pr-4 text-slate-400 hover:bg-gray-600"
                           href="/logout">
                           <span class="select-none">Logout</span>
                       </a>
@@ -146,7 +146,7 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
           navOpen.classList.toggle("hidden");
       });
 
-      sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
+    //   sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
   });
 </script>
 

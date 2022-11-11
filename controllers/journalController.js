@@ -42,8 +42,8 @@ module.exports = {
       }
     },
     createJournal: async (req, res) => {
-      console.log(req.body.journalText)
       try {
+          await Projects.updateOne({_id: req.params.id}, {$inc : {journalCount: 1}})
           await Journals.create({
             journalTitle: req.body.journalTitle.trim(),
             journalText: req.body.journalText.trim(),
@@ -60,6 +60,7 @@ module.exports = {
     deleteOneJournal: async (req, res) => {
       try {
           const entry = await Journals.findById(req.params.id)
+          await Projects.updateOne({_id: entry.projectId}, {$inc : {journalCount: -1}})
           await Journals.deleteOne( {_id: req.params.id} )
           console.log('Journal entry deleted')
           res.redirect(`/journal/${entry.projectId}`)

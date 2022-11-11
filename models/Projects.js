@@ -13,6 +13,10 @@ const ProjectsSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    journalCount: {
+        type: Number,
+        default: 0
+    },
     isComplete: {
         type: Boolean,
         default: false
