@@ -27,5 +27,4 @@ const ProjectsSchema = new mongoose.Schema({
     },
 })
 
-
 module.exports = mongoose.model('Projects', ProjectsSchema)

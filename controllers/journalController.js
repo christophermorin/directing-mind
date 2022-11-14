@@ -1,9 +1,6 @@
 const Projects = require("../models/Projects")
 const Journals = require("../models/Journals")
 
-
-
-
 module.exports = {
     getAllJournals: async (req, res) => {
       try {
@@ -49,7 +46,6 @@ module.exports = {
             journalText: req.body.journalText.trim(),
             projectId: req.params.id,
             userId: req.user.id 
-
           })
           console.log('Journal Created')
           res.redirect(`../${req.params.id}`)

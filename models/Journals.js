@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-
 const JournalSchema = new mongoose.Schema({
     journalTitle: {
         type: String,
