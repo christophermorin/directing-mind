@@ -1,16 +1,15 @@
 <%- include('partials/navbar.ejs') %>
-<div class=" flex flex-col justify-between page-load">
+<div class=" bg-white flex flex-col justify-between page-load">
   <div class="flex flex-col gap-5 items-center pt-2.5 md:ml-96 md:items-start">
-    <button class="btn btn-active text-white bg-purple-700 hover:bg-purple-500 add-project md:self-center shadow-cyan-400/30 shadow">Add Project</button>
+    <button class="btn btn-active text-cyan-400 bg-slate-900 hover:text-white add-project md:self-center shadows">Add Project</button>
       <ul class="flex flex-col gap-5 justify-center md:flex-row flex-wrap">
           <% projects.forEach( project => { %> 
             <% if (project.isComplete === false) { %>
-          <li tabindex="0" class="w-72 collapse collapse-plus bg-slate-800 shadows lg:collapse-open  rounded-md"  >
+          <li tabindex="0" class="w-72 collapse collapse-plus bg-white shadows lg:collapse-open  rounded-md"  >
             <input type="checkbox" />
-              <div class="flex flex-col h-16 justify-between collapse-title">
+              <div class="flex flex-col h-16 justify-between collapse-title bg-slate-900 mb-5">
                 <div class="h-10 flex items-center pl-2 "><h2 class="border-b-4 border-cyan-400 px-1 uppercase font-bold text-white"><%= project.projectTitle %></h2></div>
                   <div class="px-2.5 pb-1">
-                    
                     <section class="flex justify-end ">
                       <section class="flex items-center gap-1 px-2 text-slate-400">
                         <span class="text-white font-bold">
@@ -20,17 +19,15 @@
                           <span class="text-white font-bold">
                             <%= project.journalCount.toString() %> 
                           </span>
-                            <span class="material-icons text-cyan-400">auto_stories</span>
-                            
+                            <span class="material-icons text-cyan-400">auto_stories</span>   
                       </section>
-                    
                     </section>
                 </div>
               </div>
              
               <div class="collapse-content flex flex-col justify-between remove-padding">
                 <!-- bg-red-400/20 -->
-                <section class="mb-1 text-sm bg-slate-700 text-slate-300 p-2 border-l-4 border-white rounded-md hover:border-teal-100 hover:bg-slate-800 ease-in duration-150">
+                <section class="mb-1 text-sm bg-slate-700 text-slate-300 p-2 border-l-4 border-white rounded-md hover:border-teal-100 hover:bg-slate-800 ease-in duration-150 shadows">
                   <% if (project.projectDescription) { %>
                     <p> <%- project.projectDescription %> </p>
                     <!-- else no description given -->
@@ -43,40 +40,36 @@
                     <% tasks.forEach( task => { %>
                       <% if (task.projectId === project.id) { %>
                       <li>
-                        <section class="flex grow gap-2 px-2.5 py-1 border-l-4 bg-slate-600 border-cyan-400 text-sm text-white rounded-md hover:bg-slate-900 ease-in duration-150 hover:border-red-700">
+                        <section class="flex grow gap-2 px-2.5 py-1 border-l-4 bg-slate-600 border-cyan-400 text-sm text-white rounded-md hover:bg-slate-900 ease-in duration-150 hover:border-red-700 shadows">
                           <span class="material-symbols-outlined text-cyan-100">
                             star
                             </span>
                           <h3><%= task.taskTitle %></h3>
-                        
                         </section>
                       </li>
-                      
                       <% } %>
-                  
                     <% }) %>
                   </ul>
                 </section>
                 <div class="flex flex-row justify-between items-center gap-2 mt-2">
                   <section class="flex justify-center gap-2 mb-2">
                     <a href="tasks/<%= project._id%>">
-                      <button class="uppercase btn-active btn w-24 text-slate-300 bg-purple-700 border-1 border-black hover:bg-purple-500">Tasks</button>
+                      <button class="uppercase btn-active btn w-24 text-white bg-slate-900 hover:text-cyan-400 shadows">Tasks</button>
                     </a>
                     <a href="journal/<%= project._id%>">
-                      <button class="uppercase btn-active btn w-24 text-slate-300 bg-purple-700 border-1 border-black hover:bg-purple-500">Journals</button>
+                      <button class="uppercase btn-active btn w-24 text-white bg-slate-900  hover:text-cyan-400 shadows">Journals</button>
                     </a>
                   </section>
                   <div class="flex flex-row justify-end">
               
-                    
                     <!-- Complete Project Dialog -->
                     <dialog id="completeProject" class="bg-slate-900 shadows text-white">
                       <p class="text-center">Project Complete!</p>
                       <div class="flex justify-between w-60 pt-4">
                         <form action="/projects/completeProject/<%= project.id %>?_method=PUT" method="POST">
-                          <button class="btn btn-active text-slate-300 bg-slate-800 shadows" type="submit">Confirm!</button>
+                          <button class="btn btn-active text-slate-300 bg-cyan-700 hover:bg-green-700 shadows" type="submit">Confirm!</button>
                         </form>
-                        <button class="btn btn-active text-slate-300 bg-slate-800 shadows close-complete" type="submit">Not yet!</button>
+                        <button class="btn btn-active text-slate-300 bg-cyan-700 hover:bg-red-700 shadows close-complete" type="submit">Not yet!</button>
                       </div>
                     </dialog>
                     <button class="complete-project text-green-700">
@@ -90,9 +83,9 @@
                       </section>
                       <div class="flex justify-center gap-8 pt-4">
                         <form action="/projects/deleteProject/<%= project.id %>?_method=DELETE" method="POST">
-                          <button class="btn btn-active text-slate-300 bg-slate-800 shadows" type="submit">Yes</button>
+                          <button class="btn btn-active text-slate-300 bg-cyan-700 hover:bg-green-700 shadows" type="submit">Yes</button>
                         </form>
-                        <button class="btn btn-active text-slate-300 bg-slate-800 shadows close-delete">No</button>
+                        <button class="btn btn-active text-slate-300 bg-cyan-700 hover:bg-red-700 shadows close-delete">No</button>
                       </div>
                     </dialog>
                     <button class="text-red-700 dlt-project">
@@ -107,7 +100,7 @@
             <% }) %>
           </ul>
          
-        <dialog id="add_project" class=" bg-slate-800 shadows">
+        <dialog id="add_project" class=" bg-slate-900 shadows">
           <button class="text-red-700 close-add-project">
             <i class="material-icons mb-5 rounded-full hover:text-red-400 ease-in duration-150">clear</i>
           </button>
@@ -124,18 +117,11 @@
                     </div>
                   </div>
                   <div class="row">
-                    <input type="submit" value="Submit" class="btn text-slate-300 bg-slate-800 shadows" />
+                    <input type="submit" value="Submit" class="btn text-slate-300 bg-cyan-700 hover:bg-green-700 shadows" />
                   </div>
                 </form>
               </div>
         </dialog>
-        
-        <!-- component -->
-<!-- This is an example component -->
-
-
-   
-
     </div>
 </div>
 <script src="../js/projects.js"></script>

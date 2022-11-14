@@ -10,11 +10,15 @@
         <%} else { %>
           <p>See your progress, why not read this past entry?</p>
           <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
-          <p> <%- pic.journalTitle %> </p>
-          <p class="overflow-hidden h-32"> <%- pic.journalText %></p>
+          <p> 
+            <%- pic.journalTitle %>
+            <div class="text-red-200">
+              <%- pic.journalText %> 
+            </div> 
+          </p>
         <div class="card-actions justify-end">
           <a href="/journalEntries/<%= pic._id %>">
-          <div class="badge badge-outline">Read</div>
+          <div class="badge badge-outline">Continue</div>
           </a>
         </div>
         <% } %>
@@ -62,18 +66,6 @@
         </form>
       </div>
 </dialog>
-
-
-
-
-
-  <!-- <dialog id="add_journal">
-    <form action="createJournal/<%= project.id %>" method="POST">
-      <input type="text" name="journalTitle" class="input input-bordered w-full max-w-xs bg-all" placeholder="Journal Title">
-        <textarea id="editor" name="journalText" class="textarea textarea-bordered bg-all" cols="30" rows="10" placeholder="Journal Entry" required></textarea>
-      <input type="submit">
-    </form>
-  </dialog> -->
 
 </div>
 

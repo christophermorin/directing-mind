@@ -1,8 +1,6 @@
 const Projects = require("../models/Projects")
 const Tasks = require("../models/Tasks")
 
-
-
 module.exports = {
     getTasks: async (req, res) => {
         try {

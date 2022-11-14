@@ -48,7 +48,6 @@ module.exports = {
                 })
             console.log('Project and all project tasks marked complete')
             res.redirect('/projects')
-
         }catch(err){
             console.log(err)
         }

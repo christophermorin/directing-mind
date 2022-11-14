@@ -7,5 +7,4 @@ router.get('/', journalController.getAllJournals)
 router.get('/:id', ensureAuth, journalController.getJournal)
 router.post('/createJournal/:id', journalController.createJournal)
 
-
 module.exports = router

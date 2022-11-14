@@ -11,10 +11,6 @@
 </head>
 <body class="bg-slate-900">
   
-  <!--
-Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide any of your page content!
--->
-
 <style>
   ul.breadcrumb li+li::before {
       content: "\276F";
@@ -36,14 +32,10 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
       transform: translateX(0);
   }
 
-  /* #sidebar ul li a.active {
-      background: #1f2937;
-      background-color: #1f2937;
-  } */
 </style>
 
 <!-- Navbar start -->
-<nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-slate-800/50  px-4 sm:justify-between">
+<nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-slate-800  px-4 sm:justify-between">
   <ul class="breadcrumb hidden flex-row items-center py-4 text-lg text-white sm:flex ">
       <li class="inline">
           <a href="#">Direct Mind</a>
@@ -149,36 +141,3 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
     //   sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
   });
 </script>
-
-
-  <!-- <div class="navbar bg-all-nav fixed">
-    <div class="flex-none">
-        <button class="btn btn-square btn-ghost drawer-button lg:hidden" id="allow-links">
-          <label for="my-drawer-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </label>
-        </button>
-    </div>
-    <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl">Direct Mind</a>
-    </div>
-    <div class="flex-none"> 
-      <a href="/logout">Logout</a>
-    </div>
-  </div>
-  
-  <div class="drawer drawer-mobile fixed z-10 drawer-position allow-links" id="drawerToggle">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col items-center justify-center">
-      </div> 
-    <div class="drawer-side">
-        <label for="my-drawer-2" class="drawer-overlay"></label> 
-        <ul class="menu p-4 overflow-y-auto  bg-all text-base-content">
-          
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/journal">Journals</a></li>
-          <li><a>History</a></li>
-          <li><a>Resources</a></li>
-        </ul>
-    </div>
-  </div> -->
