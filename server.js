@@ -15,7 +15,7 @@ const journalRoutes = require('./routes/journal')
 const historyRoutes = require('./routes/history')
 const journalEntryRoutes = require('./routes/journalEntries')
 
-require('dotenv').config({path: './config/.env'})
+require('dotenv').config({ path: './config/.env' })
 
 // Passport config
 require('./config/passport')(passport)
@@ -30,20 +30,20 @@ app.use(logger('dev'))
 app.use(methodOverride("_method"))
 // Sessions
 app.use(
-    session({
-      secret: 'keyboard cat',
-      resave: false,
-      saveUninitialized: false,
-      store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    })
-  )
-  
+  session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
+)
+
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
-  
+
 app.use('/', mainRoutes) // Login/Sign Up 
 app.use('/projects', projectsRoutes)
 app.use('/tasks', tasksRoutes)
@@ -51,6 +51,6 @@ app.use('/journal', journalRoutes)
 app.use('/journalEntries', journalEntryRoutes)
 app.use('/history', historyRoutes)
 
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+app.listen(process.env.PORT, () => {
+  console.log('Server is running, you better catch it!')
 })    

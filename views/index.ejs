@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +9,42 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Login</title>
 </head>
+
 <body class="flex justify-center bg-all">
     <div class="hero-content min-h-screen flex flex-col">
         <div class="hero-content text-center">
-          <div class="max-w-md">
-              <h1 class="mb-5 text-5xl font-bold">Direct Mind</h1>
-                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          </div>
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold text-slate-200">Direct Mind</h1>
+                <p class="mb-5 text-slate-200">Direct your day</p>
+            </div>
         </div>
-    <div class="-content">
-          <% if (locals.messages.errors) { %>
-              <% messages.errors.forEach( el => { %>
-                  <div class="alert text-rose-600 text-center text-xs mb-2.5"><%= el.msg %></div>
-              <% }) %>    
-          <% } %>
-          <% if (locals.messages.info) { %>
-              <% messages.info.forEach( el => { %>
-                  <div class="text-rose-600 text-center text-xs pb-2.5"><%= el.msg %></div>
-              <% }) %>    
-          <% } %>
-          <form action="/login" method="POST">
-              <input type="email" name="email" placeholder="Email" class="bg-all input input-bordered w-full max-w-xs">
-              <input type="password" name="password" placeholder="Password" class="bg-all input input-bordered w-full max-w-xs">
-              <input type="submit" value="Login" class="bg-nav input input-bordered w-full max-w-xs">
-          </form>
-    </div>
-      <a href="/signup" alt="Sign Up"><button class="btn btn-secondary bg-primary input input-bordered w-full max-w-xs">Sign Up</button></a>
+        <div class="-content">
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el=> { %>
+                    <div class="alert text-rose-600 text-center text-xs mb-2.5">
+                        <%= el.msg %>
+                    </div>
+                    <% }) %>
+                        <% } %>
+                            <% if (locals.messages.info) { %>
+                                <% messages.info.forEach( el=> { %>
+                                    <div class="text-rose-600 text-center text-xs pb-2.5">
+                                        <%= el.msg %>
+                                    </div>
+                                    <% }) %>
+                                        <% } %>
+                                            <form action="/login" method="POST">
+                                                <input type="email" name="email" placeholder="Email"
+                                                    class="bg-all input input-bordered w-full max-w-xs border-cyan-500 text-slate-200">
+                                                <input type="password" name="password" placeholder="Password"
+                                                    class="bg-all input input-bordered w-full max-w-xs border-cyan-500 text-slate-200">
+                                                <input type="submit" value="Login"
+                                                    class="bg-cyan-500 input input-bordered w-full max-w-xs">
+                                            </form>
+        </div>
+        <a href="/signup" alt="Sign Up"><button
+                class="btn btn-secondary bg-primary input input-bordered w-full max-w-xs">Sign Up</button></a>
     </div>
 </body>
+
 </html>

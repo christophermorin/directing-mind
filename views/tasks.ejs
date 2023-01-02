@@ -1,88 +1,94 @@
 <%- include('partials/navbar.ejs') %>
-<div class="bg-white flex flex-col justify-between page-load ">
-  <div class="flex flex-col items-center gap-5  md:ml-80">
+  <div class="bg-white flex flex-col justify-between page-load ">
+    <div class="flex flex-col items-center gap-5  md:ml-80">
       <div class="flex flex-col items-center gap-5 bg-white p-4 rounded-md shadows mt-5">
-      <!-- Pomo Clock -->
-      <div class="grid grid-flow-col gap-5 text-center auto-cols-max">  
-        <div class="flex flex-col p-2 bg-slate-900 rounded-box text-slate-300">
-          <span class="countdown font-mono text-7xl">
-            <span style="--value:00" class="minutes"></span>
-          </span>
-          min
-        </div> 
-        <div class="flex flex-col p-2 bg-slate-900 rounded-box text-slate-300">
-          <span class="countdown font-mono text-7xl">
-            <span style="--value:00" class="seconds sec"></span>
-          </span>
-          sec
+        <!-- Pomo Clock -->
+        <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+          <div class="flex flex-col p-2 bg-slate-900 rounded-box text-slate-300">
+            <span class="countdown font-mono text-7xl">
+              <span style="--value:00" class="minutes"></span>
+            </span>
+            min
+          </div>
+          <div class="flex flex-col p-2 bg-slate-900 rounded-box text-slate-300">
+            <span class="countdown font-mono text-7xl">
+              <span style="--value:00" class="seconds sec"></span>
+            </span>
+            sec
+          </div>
         </div>
-      </div>
         <section id="setTime">
           <button class="btn btn-active bg-slate-900 text-cyan-400 hover:text-white" id="t15">15</button>
           <button class="btn btn-active bg-slate-900 text-cyan-400 hover:text-white" id="t25">25</button>
           <button class="btn btn-active bg-slate-900 text-cyan-400 hover:text-white" id="t45">45</button>
           <button class="btn btn-active bg-slate-900 text-cyan-400 hover:text-white" id="t60">60</button>
         </section>
-    <!-- Clock Buttons -->
-    <section>
-      <button class="btn btn-active bg-slate-900 text-green-400 hover:text-green-200 shadows" id="start">Start</button>
-      <button class="btn btn-active bg-slate-900 text-red-400 hover:text-red-200 shadows" id="stop">Stop</button>
-    </section>
+        <!-- Clock Buttons -->
+        <section>
+          <button class="btn btn-active bg-slate-900 text-green-400 hover:text-green-200 shadows"
+            id="start">Start</button>
+          <button class="btn btn-active bg-slate-900 text-red-400 hover:text-red-200 shadows" id="stop">Stop</button>
+        </section>
       </div>
 
-    <div class="flex flex-col items-center py-5">
-    <!-- Add Task -->
-    <button class="btn btn-active text-cyan-400 hover:text-white bg-slate-900 shadows add-task">Add Task</button>
-    <p>Your Tasks</p>
-    <!-- Task List -->
-    <ul class="flex flex-col gap-2.5 bg-white p-2 rounded-md shadows">
-    <% tasks.forEach (el => { %>
-      <li tabindex="0" class="collapse shadows w-72 text-black <%= el.isComplete === true ? 'opacity-70 blur-sm' : '' %> hover:blur-none" >
-        <div class="flex items-center justify-between p-2.5 border-l-2 border-cyan-500 bg-slate-900 text-sm font-bold hover:bg-slate-600 ease-in duration-150 hover:border-cyan-200 text-slate-300">
-          <p> <%- el.taskTitle %> </p>
-          <section class="flex gap-2.5 ">
-            <form action="completeTask/<%= el.id %>?_method=PUT" method="POST">
-              <button class="cmplt" type="submit"><i class="material-icons text-green-400">done</i></button>
-            </form>
-              <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
-                <button class="dlt" type="submit"><i class="material-icons text-red-400">clear</i></button>
-              </form>
-              <!-- <i class="material-icons">keyboard_double_arrow_down</i> -->
-          </section>
-        </div>
-        <div class="collapse-content bg-slate-600 text-sm border-l-2 border-teal-300 remove-padding-task text-slate-200">
-          <section>
-              <p><%- el.taskDescription %></p>
-          </section>
-        </div>
-      </li>
-    <% }) %>
-    </ul>
-    </div>
-    <!-- Add Task Modal -->
-    <dialog id="add_task" class="bg-slate-900 shadows">
-      <button class="text-red-700 close-add-task">
-        <i class="material-icons mb-5 rounded-full hover:text-red-400 ease-in duration-150">clear</i>
-      </button>
-    <div class="row">
-        <form class="col s12" action="createTask/<%= project.id %>" method="POST">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Title" id="task_title" type="text" class="input input-bordered w-full max-w-xs bg-slate-600 text-white" name="taskTitle" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12" id="editor-field">
-              <textarea id="editor" placeholder="Description" cols="30" rows="10" class="textarea textarea-bordered bg-all" name="taskDescription"></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <input type="submit" value="Submit" class="btn text-white bg-cyan-700/50" />
-          </div>
-        </form>
+      <div class="flex flex-col items-center py-5">
+        <!-- Add Task -->
+        <button class="btn btn-active text-cyan-400 hover:text-white bg-slate-900 shadows add-task">Add Task</button>
+        <p>Your Tasks</p>
+        <!-- Task List -->
+        <ul class="flex flex-col gap-2.5 bg-white p-2 rounded-md shadows">
+          <% tasks.forEach (el=> { %>
+            <li tabindex="0"
+              class="collapse shadows w-72 text-black <%= el.isComplete === true ? 'opacity-70 blur-sm' : '' %> hover:blur-none">
+              <div
+                class="flex items-center justify-between p-2.5 border-l-2 border-cyan-500 bg-slate-900 text-sm font-bold hover:bg-slate-600 ease-in duration-150 hover:border-cyan-200 text-slate-300">
+                <p> <%- el.taskTitle %> </p>
+                <section class="flex gap-2.5 ">
+                  <form action="completeTask/<%= el.id %>?_method=PUT" method="POST">
+                    <button class="cmplt" type="submit"><i class="material-icons text-green-400">done</i></button>
+                  </form>
+                  <form action="deleteTask/<%= el.id %>?_method=DELETE" method="POST">
+                    <button class="dlt" type="submit"><i class="material-icons text-red-400">clear</i></button>
+                  </form>
+                  <!-- <i class="material-icons">keyboard_double_arrow_down</i> -->
+                </section>
+              </div>
+              <div
+                class="collapse-content bg-slate-600 text-sm border-l-2 border-teal-300 remove-padding-task text-slate-200">
+                <section>
+                  <p><%- el.taskDescription %></p>
+                </section>
+              </div>
+            </li>
+            <% }) %>
+        </ul>
       </div>
-    </dialog>
+      <!-- Add Task Modal -->
+      <dialog id="add_task" class="bg-slate-900 shadows">
+        <button class="text-red-700 close-add-task">
+          <i class="material-icons mb-5 rounded-full hover:text-red-400 ease-in duration-150">clear</i>
+        </button>
+        <div class="row">
+          <form class="col s12" action="createTask/<%= project.id %>" method="POST">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Title" id="task_title" type="text"
+                  class="input input-bordered w-full max-w-xs bg-slate-600 text-white" name="taskTitle" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12" id="editor-field">
+                <textarea id="editor" placeholder="Description" cols="30" rows="10"
+                  class="textarea textarea-bordered bg-all" name="taskDescription"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Submit" class="btn text-white bg-cyan-700/50" />
+            </div>
+          </form>
+        </div>
+      </dialog>
+    </div>
   </div>
-</div>
-<script src="../js/tasks.js"></script>
-<%- include('partials/footer.ejs') %>
+  <script src="../js/tasks.js"></script>
+  <%- include('partials/footer.ejs') %>

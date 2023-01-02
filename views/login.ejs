@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,24 +11,32 @@
 
     <title>Login</title>
 </head>
+
 <body>
     <div class="hero min-h-screen bg-accent-content">
         <h1>Login</h1>
-            <% if (locals.messages.errors) { %>
-                <% messages.errors.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <% if (locals.messages.info) { %>
-                <% messages.info.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="Email" class="input input-bordered w-full max-w-xs">
-                <input type="password" name="password" placeholder="Password" class="input input-bordered w-full max-w-xs">
-                <input type="submit" class="input input-bordered w-full max-w-xs">
-            </form>
-      </div>
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el=> { %>
+                <div class="alert alert-danger">
+                    <%= el.msg %>
+                </div>
+                <% }) %>
+                    <% } %>
+                        <% if (locals.messages.info) { %>
+                            <% messages.info.forEach( el=> { %>
+                                <div class="alert alert-danger">
+                                    <%= el.msg %>
+                                </div>
+                                <% }) %>
+                                    <% } %>
+                                        <form action="/login" method="POST">
+                                            <input type="email" name="email" placeholder="Email"
+                                                class="input input-bordered w-full max-w-xs">
+                                            <input type="password" name="password" placeholder="Password"
+                                                class="input input-bordered w-full max-w-xs">
+                                            <input type="submit" class="input input-bordered w-full max-w-xs">
+                                        </form>
+    </div>
 </body>
+
 </html>

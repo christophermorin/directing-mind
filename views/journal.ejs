@@ -1,73 +1,88 @@
 <%- include('partials/navbar.ejs') %>
-<div class="bg-white flex flex-col items-center page-load">
-  <div class="max-w-4xl shadow-xl flex flex-col items-center shadows">
-    <div class="card-body">
-      <h2 class="card-title">
-        <%= project.projectTitle %>
-      </h2>
-        <% if (journals.length === 0) { %>
+  <div class="bg-white flex flex-col gap-10  items-center page-load">
+    <div class=" flex flex-col items-center shadows border-l-4 bg-slate-700 border-cyan-400 min-h-[300px] rounded-md">
+      <div class="card-body">
+        <h1 class="card-title text-cyan-400 border-l-4 bg-slate-600 border-cyan-400 px-2 shadows rounded-md">
+          Project: <%= project.projectTitle %>
+        </h1>
+        <% if (journals.length===0) { %>
           <p>There are no journals for your <%=project.projectTitle %> project.</p>
-        <%} else { %>
-          <p>See your progress, why not read this past entry?</p>
-          <p><% let pic = journals[Math.floor(Math.random() * journals.length)] %></p>
-          <p> 
-            <%- pic.journalTitle %>
-            <div class="text-red-200">
-              <%- pic.journalText %> 
-            </div> 
-          </p>
-        <div class="card-actions justify-end">
-          <a href="/journalEntries/<%= pic._id %>">
-          <div class="badge badge-outline">Continue</div>
-          </a>
-        </div>
-        <% } %>
+          <%} else { %>
+            <p class="text-white text-xs">See your progress, why not read this past entry?</p>
+            <p>
+              <% let pic=journals[Math.floor(Math.random() * journals.length)] %>
+            </p>
+            <div class="shadows p-2 bg-slate-600 border-l-4 border-white rounded-md">
+              <div class="text-cyan-400 mb-2">
+                <p>Title: <%- pic.journalTitle %></p>
+              </div>
+              <div class="text-white pl-2 overflow-hidden max-h-64">
+                <%- pic.journalText %>
+              </div>
+            </div>
+            <div class="card-actions justify-end">
+              <a href="/journalEntries/<%= pic._id %>">
+                <div class="badge badge-outline text-cyan-400 bg-slate-900 hover:text-white shadows">Continue</div>
+              </a>
+            </div>
+            <% } %>
       </div>
-      <button class="btn btn-active btn-primary add-journal my-8">
+      <button class="btn btn-active text-cyan-400 bg-slate-900 hover:text-white add-journal my-2 shadows">
         Add Journal
       </button>
-  </div>
+    </div>
 
-  <div class="flex flex-col justify-center pb-2.5">
-    <ul class="grid grid-cols-1  gap-2.5 justify-center pt-2.5">     
-      <% journals.forEach(el => { %>   
-         <li class="flex flex-col justify-center items-center">
+    <div
+      class="flex flex-col justify-center pb-2.5 bg-slate-700 p-5 shadows min-h-[300px] min-w-[12rem] border-l-4 border-cyan-400 rounded-md">
+      <ul class="grid grid-cols-1  gap-2.5 justify-center">
+        <% journals.forEach(el=> { %>
+          <li class="flex flex-col justify-center items-center">
             <div class="divider">
-              <span><%= el.journalDate %></span>
-            </div> 
-              <a href="/journalEntries/<%= el._id %>">
-                <button class="btn justify-between h-20 w-72 shadows">
-                  <section class="flex flex-col w-full">
-                    <p><%= el.journalTitle %></p>
-                  </section>
-                </button>
-              </a>
+              <span class="text-cyan-400 bg-slate-600 border-l-4 border-white shadows px-2 rounded-md">
+                <%= el.journalDate %>
+              </span>
+            </div>
+            <a href="/journalEntries/<%= el._id %>">
+              <button
+                class="btn justify-between h-20 w-44 overflow-hidden text-white bg-slate-900  hover:text-cyan-400 shadows">
+                <section class="flex flex-col w-full">
+                  <p>
+                    <%= el.journalTitle %>
+                  </p>
+                </section>
+              </button>
+            </a>
           </li>
-     <% }) %>
-    </ul>
-  </div>
+          <% }) %>
+      </ul>
+    </div>
 
-  <dialog id="add_journal" class="bg-black border-4 border-gray-900">
-    <div class="row flex flex-col">
+    <dialog id="add_journal" class="bg-slate-900 shadows">
+      <button class="text-red-700 close-add-journal">
+        <i class="material-icons mb-5 rounded-full hover:text-red-400 ease-in duration-150">clear</i>
+      </button>
+      <div class="row flex flex-col">
         <form class="col s12 items-center" action="createJournal/<%= project.id %>" method="POST">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Journal Title" id="project_title" type="text" class="input input-bordered w-full max-w-xs bg-gray-800 text-white" name="journalTitle" required>
+              <input placeholder="Journal Title" id="project_title" type="text"
+                class="input input-bordered w-full max-w-xs bg-slate-600 text-white" name="journalTitle" required>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12" id="editor-field">
-              <textarea id="editor" placeholder="Journal Text" cols="25" rows="10" class="textarea textarea-bordered bg-all" name="journalText"></textarea>
+              <textarea id="editor" placeholder="Journal Text" cols="25" rows="10" class="textarea textarea-bordered"
+                name="journalText"></textarea>
             </div>
           </div>
           <div class="row">
-            <input type="submit" class="btn bg-gray-800">
+            <input type="submit" class="btn text-slate-300 bg-cyan-700 hover:bg-green-700 shadows">
           </div>
         </form>
       </div>
-</dialog>
+    </dialog>
 
-</div>
+  </div>
 
-<%- include('partials/footer.ejs') %>
-<script src="../js/journal.js"></script>
+  <%- include('partials/footer.ejs') %>
+    <script src="../js/journal.js"></script>

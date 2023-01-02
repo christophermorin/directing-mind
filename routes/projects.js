@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const projectsController = require('../controllers/projectsController') 
+const projectsController = require('../controllers/projectsController')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureAuth, projectsController.getProjects)

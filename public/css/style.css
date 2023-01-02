@@ -4,9 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-body{
+body {
   font-family: 'Poppins', sans-serif;
 }
+
 /* ****************************************************************** */
 /* Custom Styles */
 /* ****************************************************************** */
@@ -19,80 +20,93 @@ body{
 /* ********************************** */
 /* Setting defaults on all forms */
 /* ********************************** */
-form{
-    display: flex;
-    flex-flow: column;
-    gap: 2rem;
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
 }
+
 /* ************************************** */
 /* Resetting collapse container */
 /* ************************************** */
-.collapse-title, 
-:where(.collapse > input[type="checkbox"]){
+.collapse-title,
+:where(.collapse > input[type="checkbox"]) {
   width: 100%;
-  padding: 0 !important; 
+  padding: 0 !important;
   padding-right: 0 !important;
   min-height: 0 !important;
   transition: background-color 0.2s ease-in-out;
 }
 
-.remove-padding{
-  padding-bottom: 0 !important; 
-}
-.remove-padding-task{
+.remove-padding {
   padding-bottom: 0 !important;
- 
 }
+
+.remove-padding-task {
+  padding-bottom: 0 !important;
+
+}
+
 /* ****************************** */
 /* Setting container heights */
 /* ****************************** */
-.navbar{
+.navbar {
   height: 10vh;
   z-index: 1;
 }
-.footer{
+
+.footer {
   min-height: 5vh;
 }
-.page-load{
+
+.page-load {
   min-height: 95vh;
   padding-top: 10vh;
 }
+
 /* ************************ */
 /* Positioning Side Nav Drawer */
 /* ************************ */
-.drawer-position{
+.drawer-position {
   height: 90vh;
   width: unset;
   top: 10vh;
 }
+
 /* ***************************************************** */
- /* Temp default backgrounds for all buttons/layouts */
+/* Temp default backgrounds for all buttons/layouts */
 /* ***************************************************** */
-.bg-all{
-    background-color: #07080C;
+.bg-all {
+  background-color: #07080C;
 }
-.bg-all-nav{
+
+.bg-all-nav {
   background: linear-gradient(to top, #07080C 10%, #273550);
 }
-.bg-project-card{
+
+.bg-project-card {
   background: linear-gradient(to left top, #07080C 10%, #1a2336 60%);
 
 }
+
 /* .bg-project-card{
   background: linear-gradient(to left bottom, #07080C 20%, #273550);
 } */
-.bg-project-card-corner{
+.bg-project-card-corner {
   background: linear-gradient(to left top, #07080C 60%, #273550);
 }
-.border-card{
+
+.border-card {
   border-top: 2px solid #273550;
   border-left: 2px solid #273550;
   border-right: 2px solid #273550;
 }
-.bg-task{
+
+.bg-task {
   background-color: #4a577367;
 }
-.bg-task-desc{
+
+.bg-task-desc {
   /* background-color: #4a5773e4; */
   background-color: #4a5773bb;
 }
@@ -100,46 +114,47 @@ form{
 /* ******************************************** */
 /* Temp Box Shadows for Project/Task Boxes */
 /* ********************************************* */
-.shadows{
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 2px rgba(0,0,0,0.30);
+.shadows {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 2px rgba(0, 0, 0, 0.30);
 }
 
-.btn{
+.btn {
   height: 2.5rem;
   min-height: 2rem;
   border-radius: 6px;
 }
 
 
-.project-btn{
+.project-btn {
   background-color: white
-  
-}
-.project-btn:hover{
-  background-color: rgba(68, 64, 60,1);
 }
 
-.allow-links{
+.project-btn:hover {
+  background-color: rgba(68, 64, 60, 1);
+}
+
+.allow-links {
   pointer-events: none;
 }
 
-.ck-content{
+.ck-content {
   height: 300px;
 }
 
 
 
-#complete{
-  background: green  !important;
+#complete {
+  background: green !important;
   color: red;
 
 }
+
 /* .ck.ck-editor__main > .ck-editor__editable{
   background: black !important;
 } */
 
 
-#editor-field{
+#editor-field {
   min-width: 300px;
   max-width: 350px;
 }
@@ -149,10 +164,11 @@ form{
 
 
 @media (min-width: 1024px) {
-  .allow-links{
+  .allow-links {
     pointer-events: unset;
   }
-  #editor-field{
+
+  #editor-field {
     max-width: 600px;
   }
 }

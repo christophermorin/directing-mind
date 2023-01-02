@@ -1,15 +1,20 @@
 <%- include('partials/navbar.ejs') %>
-<div class="bg-white flex flex-col items-center page-load">
-    <h1><%= entry.journalTitle %></h1>
-    <section class="max-w-lg pt-8 px-4">
-        <p><%- entry.journalText %></p>
-    </section>
-</div>
-<section class="">
-    <form action="deleteJournal/<%= entry.id %>?_method=DELETE" method="POST">
-        <button class="btn btn-active btn-primary" type="submit">Delete Entry</button>
-      </form>
-</section>
+    <div class="bg-white flex flex-col items-center justify-center page-load">
+        <div class="border-l-2 border-cyan-500 bg-slate-900 text-sm font-bold rounded-md">
+            <h1 class="text-lg pl-2 text-cyan-400">
+                <%= entry.journalTitle %>
+            </h1>
+            <section class="max-w-lg py-8 px-4 lg:max-w-3xl text-slate-200">
+                <p><%- entry.journalText %></p>
+            </section>
+        </div>
+        <section class="lg:w-44 self-center mt-2">
+            <form action="deleteJournal/<%= entry.id %>?_method=DELETE" method="POST">
+                <button class="btn btn-active text-cyan-400 bg-slate-900 hover:text-white shadows" type="submit">Delete
+                    Entry</button>
+            </form>
+        </section>
+    </div>
 
-<%- include('partials/footer.ejs') %>
-<script src="../js/journal.js"></script>
+    <%- include('partials/footer.ejs') %>
+        <script src="../js/journal.js"></script>

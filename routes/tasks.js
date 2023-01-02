@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const tasksController = require('../controllers/tasksController') 
+const tasksController = require('../controllers/tasksController')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/:id', tasksController.getTasks)
