@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/christophermorin/assets/blob/d50c3da7ce5ba934b9601e0893da73e3f57464a3/DirectMind.jpg)
+![Screenshot](https://github.com/christophermorin/assets/blob/477f254567f847a3533510d52b9373f347d2bd45/directMind_jan.jpg)
 
 
 ## Tech used: ![EJS BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=3c7f5d&style=plastic&logo=ejs)![TAILWIND BADGE](https://img.shields.io/static/v1?label=|&message=TAILWIND&color=285f65&style=plastic&logo=tailwind)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)
